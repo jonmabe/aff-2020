@@ -184,3 +184,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+
+function add_theme_scripts() {
+	wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css');
+	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+	wp_enqueue_style( 'index', get_template_directory_uri() . '/css/index.css');
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );

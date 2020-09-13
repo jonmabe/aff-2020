@@ -189,9 +189,28 @@ body {
     background-image: url(../images/Tent01_S.png);background-repeat: no-repeat;
     background-position: center top;
     text-align: center;
+    height: 256px;
 }
-#AFF-Tent01 {
-    margin-top: 90px;
+.AFF-Tent-1 {
+    background-image: url(../images/Tent01_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-2 {
+    background-image: url(../images/Tent02_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-3 {
+    background-image: url(../images/Tent03_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-4 {
+    background-image: url(../images/Tent04_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-5 {
+    background-image: url(../images/Tent05_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-6 {
+    background-image: url(../images/Tent06_S.png);background-repeat: no-repeat;
+}
+.AFF-Tent-Image {
+    margin-top: 100px;
 }
 h3 {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -293,6 +312,9 @@ h4 {
     top: 550px;
     left: -50px;
 }
+.AFF-ContestContainer{
+    position: relative;
+}
 .AFF-ContestC01 {
     background-image: url(../images/ContestBack01.png);
     background-repeat: no-repeat;
@@ -344,6 +366,16 @@ h4 {
     font-size: 15px;
     padding-left: 50px;
     position: relative;
+}
+.AFF-Contest-Image01{
+    position: absolute;
+    top: 102px;
+    left: 42px;
+}
+.AFF-Contest-Image02{
+    position: absolute;
+    top: 114px;
+    right: 40px;
 }
 .AFF-Indent01 {
     text-indent: 10px;

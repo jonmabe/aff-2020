@@ -18,27 +18,43 @@
 
 <div class="col-md-auto" id="AFF-right-col">
 <div class="AFF-ParadeButton">
-	<a class="AFF-nav-link" href="parade.html">PARADE</a>
+	<a class="AFF-nav-link" href="<?= get_permalink(get_page_by_path( 'parade' )) ?>">PARADE</a>
 </div>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/SupportArrow-text_S.png" alt="Text: With Generous Support From, Image: Yellow Down Arrow" id="AFF-SupportArrow">
-<div class="AFF-Sponsor">
-	<a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimLogo.png" alt="Anaheim City Logo" id="AFF-AnaheimLogo"></a>
-</div>
-<div class="AFF-Sponsor">
-	<a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimLogo.png" alt="Anaheim City Logo" id="AFF-AnaheimLogo"></a>
-</div>
-<div class="AFF-Sponsor">
-	<a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimLogo.png" alt="Anaheim City Logo" id="AFF-AnaheimLogo"></a>
-</div>
+<?php
+	$post = get_page_by_path('thanks');
+	if( have_rows('tier_1_sponsors') ):
+		while ( have_rows('tier_1_sponsors') ) : the_row();
+			$image = get_sub_field('image');
+			$image_url = $image ? $image['url'] : "";
+			$url = get_sub_field('url');
+			$description = get_sub_field('description');
+			?>
+			<div class="AFF-Sponsor">
+				<a href="#"><img src="<?= $image_url ?>" alt="<?= $description ?>" class="AFF-SponsorLogo"></a>
+			</div>
+			<?php
+		endwhile;
+	endif;
+	wp_reset_postdata();
+?>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/ThanksArrow-text_S.png" alt="Text: Big Thanks, Image: Yellow Down Arrow" id="AFF-ThanksArrow">
 <div class="AFF-Thanks">
 	<ul>
-		<li class="AFF-Thanks-Name">TREVOR KELLY</li>
-		<li class="AFF-Thanks-Name">AMBER FOXX</li>
-		<li class="AFF-Thanks-Name">SEAN OLIU</li>
-		<li class="AFF-Thanks-Name">DARDEN</li>
-		<li class="AFF-Thanks-Name">BOB BAKER MARIONETTES</li>
-		<li class="AFF-Thanks-Name">RHODE MONTIJO</li>
+		<?php
+		$args = array(  
+			'post_type' => array('artist', 'festivalact'),
+			'post_status' => 'publish',
+			//'posts_per_page' => 8, 
+			'orderby' => 'title', 
+			'order' => 'ASC', 
+		);
+		$loop = new WP_Query( $args ); 
+		while ( $loop->have_posts() ) : $loop->the_post(); 
+			?><li class="AFF-Thanks-Name"><a href="<?= get_permalink() ?>"><?= the_title() ?></a></li><?
+		endwhile;
+		wp_reset_postdata();
+	?>
 	</ul>
 </div>
 <aside id="secondary" class="widget-area">

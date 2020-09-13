@@ -150,6 +150,15 @@ body {
     padding: 0px !important;
     text-align: center;
 }
+.AFF-GenericBodyContent {
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    position: relative;
+    top: 219px;
+    left: 0;
+    padding-top: 65px;
+}
 .AFF-MainBodyContent {
     background-image: url(../images/FrameHP.png);
     background-repeat: no-repeat;
@@ -192,22 +201,22 @@ body {
     height: 256px;
 }
 .AFF-Tent-1 {
-    background-image: url(../images/Tent01_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent01_S.png) !important;
 }
 .AFF-Tent-2 {
-    background-image: url(../images/Tent02_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent02_S.png) !important;
 }
 .AFF-Tent-3 {
-    background-image: url(../images/Tent03_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent03_S.png) !important;
 }
 .AFF-Tent-4 {
-    background-image: url(../images/Tent04_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent04_S.png) !important;
 }
 .AFF-Tent-5 {
-    background-image: url(../images/Tent05_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent05_S.png) !important;
 }
 .AFF-Tent-6 {
-    background-image: url(../images/Tent06_S.png);background-repeat: no-repeat;
+    background-image: url(../images/Tent06_S.png) !important;
 }
 .AFF-Tent-Image {
     margin-top: 100px;
@@ -258,7 +267,7 @@ h4 {
     display: flex;
     align-items: center;
 }
-#AFF-AnaheimLogo {
+.AFF-SponsorLogo {
     width: 114px;
 }
 .AFF-Thanks {
@@ -273,6 +282,12 @@ h4 {
 .AFF-Thanks-Name {
     font-family: Anderson Stingray, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #e59908;
+}
+.AFF-Thanks-Name a:link{
+    color: #e59908;
+}
+.AFF-Thanks-Name a:link:hover{
+    color: #000000;
 }
 /* Contests Page Specific */
 .AFF-EntrySteps {

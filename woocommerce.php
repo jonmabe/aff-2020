@@ -66,51 +66,9 @@ $tent_background_number = 0;
 	<div class="AFF-header">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/HeaderStars_S.png" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>" id="AFF-HeaderLogo">
 	</div>
-	<div class="AFF-MainBodyContent">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/BottomLeftStars_S.png" alt="Two 5-point Stars, One Solid Black, One Black Outline" id="AFF-BottomLeftStars">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FeaturingArrow_S.png" alt="Banner with 2 Descending Folds Ending in Arrow Pointing Down, Text on Top Fold: Always Fun! Always Free!, Text on Bottom Fold: Featuring" id="AFF-FeaturingArrow">
-		<div id="primary" class="site-main container AFF-Tents">
-			<?php
-			while ( $loop->have_posts() ) : $loop->the_post(); 
-				$image = get_field('thumbnail_photo');
-				$rotate_image_degrees = rand(-2,2);
-				if($tent_background_number == 6)
-					$tent_background_number = 1;
-				else $tent_background_number++;
-			?>
-				<? if($col_count % 3 == 0) { ?>
-				<div class="row">
-				<?php } ?>
-					<div class="col-sm AFF-Tent AFF-Tent-<?echo $tent_background_number ?>">
-						<div class="container AFF-TentContainer">
-							<div class="row">
-								<div class="col">
-									<a href="<? the_permalink() ?>">
-										<? if ($image) {
-											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
-										} ?>
-									</a>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">
-									<h3><a href="<? the_permalink() ?>"><? the_field('name') ?></a></h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				<? if(($col_count + 1) % 3 == 0) { ?>
-				</div>
-				<?php } ?>
-			<?php
-				$col_count++;
-			endwhile;
-			?>
-			<? if(($col_count) % 3 != 0) { ?>
-				</div>
-			<?php } ?>
-		</div>
-
+	<div class="AFF-GenericBodyContent">
+		<?php woocommerce_content(); ?>
+		<div style="clear:both"></div>
 <?php
 wp_reset_postdata(); 
 

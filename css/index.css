@@ -22,6 +22,54 @@
 body {
     background-color: #000000;
 }
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a, 
+a:link,
+a:visited {
+    color: #000000;
+}
+a:hover {
+    color: #e5c588;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 30px;
+}
+h2 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 24px;
+}
+h3 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 18px;
+}
+
 .AFF-container {
     width: 1000px !important;
 }
@@ -30,6 +78,13 @@ body {
     width: 195px;
     padding-left: 0px;
     padding-right: 0px;
+}
+#AFF-SmallBasicHeader {
+    margin-left: -190px;
+    position: relative;
+}
+.AFF-SidebarSmallBasicHeader{
+    height:200px;
 }
 .AFF-HomeButton {
     background-image: url(../images/HomeButton_S.png);
@@ -120,7 +175,6 @@ body {
 #AFF-mid-col {
     background-color: #e59908;
     width: 640px;
-    padding-bottom: 230px;
 }
 .AFF-Nav {
     width: 100%;
@@ -130,15 +184,20 @@ body {
     justify-content: space-between;
     z-index: 10;
 }
-.AFF-nav-link, .AFF-Nav li a{
+.AFF-nav-link, .AFF-Nav li a,
+.nav-links a{
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 17px;
     color: #000000;
     margin: auto;
 }
-.AFF-Nav a:hover {
+.AFF-Nav a:hover,
+.nav-links a:hover {
     color: #e5c588;
     text-decoration: none;
+}
+.nav-links{
+    margin-top:25px;
 }
 .AFF-Active a {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -155,9 +214,7 @@ body {
     background-position: center top;
     width: 100%;
     position: relative;
-    top: 219px;
     left: 0;
-    padding-top: 65px;
 }
 .AFF-MainBodyContent {
     background-image: url(../images/FrameHP.png);
@@ -165,14 +222,11 @@ body {
     background-position: center top;
     width: 100%;
     position: relative;
-    top: 219px;
-    left: 0;
     padding-top: 481px;
 }
 #AFF-HeaderLogo {
-    position: absolute;
-    top: 29px;
-    left: 10px;
+    position: relative;
+    
     z-index: 2;
 }
 #AFF-BottomLeftStars {
@@ -185,7 +239,7 @@ body {
     position: absolute;
     top: 310px;
     left: -15px;
-    z-index: 1;
+    z-index: 3;
 }
 .AFF-Tents {
     width: 570px;
@@ -199,6 +253,22 @@ body {
     background-position: center top;
     text-align: center;
     height: 256px;
+}
+.AFF-Tent a,
+.AFF-Tent a:link,
+.AFF-Tent a:visited,
+.AFF-ArtistsTent a,
+.AFF-ArtistsTent a:link,
+.AFF-ArtistsTent a:visited,
+.AFF-CraftsTent a,
+.AFF-CraftsTent a:link,
+.AFF-CraftsTent a:visited{
+    color: #e3490b;
+}
+.AFF-Tent a:hover,
+.AFF-ArtistsTent a:hover,
+.AFF-CraftsTent a:hover{
+    color: #000000;
 }
 .AFF-Tent-1 {
     background-image: url(../images/Tent01_S.png) !important;
@@ -221,23 +291,33 @@ body {
 .AFF-Tent-Image {
     margin-top: 100px;
 }
-h3 {
+.AFF-Tent h3,
+.AFF-ArtistsTent h3,
+.AFF-CraftsTent h3 {
+    font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 12px;
+    color: #e3490b;
+    margin-top: 5px;
+}
+.AFF-Tent h3 a,
+.AFF-ArtistsTent h3 a,
+.AFF-CraftsTent h3 a {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 12px;
     color: #e3490b;
 }
-h3 a {
-    font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 12px;
-    color: #e3490b;
-}
-h3 a:hover {
+.AFF-Tent h3 a:hover,
+.AFF-ArtistsTent h3 a:hover,
+.AFF-CraftsTent h3 a:hover {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 12px;
     color: #000000;
     text-decoration: none;
 }
 .AFF-SupportFooter {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     margin-top: 40px;
     text-align: center;
 }
@@ -283,10 +363,12 @@ h4 {
     font-family: Anderson Stingray, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #e59908;
 }
-.AFF-Thanks-Name a:link{
+.AFF-Thanks-Name a,
+.AFF-Thanks-Name a:link,
+.AFF-Thanks-Name a:visited{
     color: #e59908;
 }
-.AFF-Thanks-Name a:link:hover{
+.AFF-Thanks-Name a:hover{
     color: #000000;
 }
 /* Contests Page Specific */
@@ -311,16 +393,13 @@ h4 {
     left: 20px;
 }
 #AFF-ContestsHeader {
-    position: absolute;
-    top: 30px;
-    left: -190px;
+    position: relative;
+    margin-left: -190px;
     z-index: 2;
 }
 .AFF-ContestBody {
     width: 100%;
     position: relative;
-    top: 219px;
-    left: 0;
 }
 #AFF-ContestMiddleStar {
     position: absolute;
@@ -421,16 +500,13 @@ h4 {
 }
 /* Main Stage Page Specific */
 #AFF-MainStageHeader {
-    position: absolute;
-    top: 30px;
-    left: -190px;
+    margin-left: -190px;
     z-index: 2;
+    position: relative;
 }
 .AFF-MainStageBody {
     width: 100%;
     position: relative;
-    top: 219px;
-    left: 0;
 }
 .AFF-MSTents {
     width: 570px;
@@ -480,16 +556,13 @@ h4 {
 }
 /* Artists Page Specific */
 #AFF-ArtistsHeader {
-    position: absolute;
-    top: 30px;
-    left: -190px;
+    position: relative;
+    margin-left: -190px;
     z-index: 2;
 }
 .AFF-ArtistsBody {
     width: 100%;
     position: relative;
-    top: 219px;
-    left: 0;
 }
 .AFF-ArtistsTents {
     width: 570px;
@@ -564,16 +637,13 @@ h4 {
 }
 /* Crafts Page Specific */
 #AFF-CraftsHeader {
-    position: absolute;
-    top: 30px;
-    left: -190px;
+    position: relative;
+    margin-left: -190px;
     z-index: 2;
 }
 .AFF-CraftsBody {
     width: 100%;
     position: relative;
-    top: 219px;
-    left: 0;
 }
 .AFF-CraftsTents {
     width: 570px;
@@ -657,4 +727,295 @@ h4 {
     font-size: 15px;
     margin: 30px auto 10px auto;
     width: 500px;
+}
+
+/* Posts */
+.post .entry-title {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+}
+.post .entry-title a, 
+.post .entry-title a:link {
+    color: #000000;
+    font-size: 40px;
+}
+.post .entry-title a:hover {
+    color: #e5c588;
+    text-decoration: none;
+}
+
+/* Post */
+
+.post .entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post .entry-content {
+    font-family: sans-serif;
+    text-justify: newspaper;
+    color: #000000;
+}
+
+/* History */
+
+#AFF-HistoryBottomStar {
+    position: absolute;
+    top: 390px;
+    left: 20px;
+}
+#AFF-HistorysHeader {
+    position: relative;
+    margin-left: -190px;
+    z-index: 2;
+}
+.AFF-HistoryBody {
+    width: 100%;
+}
+#AFF-HistoryMiddleStar {
+    position: absolute;
+    top: 550px;
+    left: -50px;
+}
+.AFF-HistoryContainer{
+    position: relative;
+    margin-top:10px;
+}
+.AFF-HistoryC01 {
+    background-image: url(../images/ContestBack01.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 251px;
+}
+.AFF-HistoryC02 {
+    background-image: url(../images/ContestBack02.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 263px;
+}
+.AFF-HistoryTitle01 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: auto;
+    font-size: 25px;
+    padding-left: 188px;
+    padding-top: 35px;
+}
+.AFF-HistoryInfo01 {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e59908;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    padding-left: 188px;
+    position: relative;
+}
+.AFF-HistoryTitle02 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: auto;
+    font-size: 25px;
+    padding-left: 50px;
+    padding-top: 48px;
+}
+.AFF-HistoryInfo02 {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e59908;
+    text-align: left;
+    margin-top:4px;
+    margin-left: 0px;
+    margin-right: 187px;
+    font-size: 15px;
+    padding-left: 44px;
+    position: relative;
+}
+.AFF-HistoryC01 .wp-post-image{
+    position: absolute;
+    top: 102px;
+    left: 42px;
+    z-index: 1;
+}
+.AFF-HistoryC02 .wp-post-image{
+    position: absolute;
+    top: 114px;
+    right: 40px;
+    z-index: 1;
+}
+.AFF-HistoryBtn01 {
+    position: absolute;
+    top: 148px;
+    left: 450px;
+    z-index: 1;
+}
+.AFF-HistoryBtn02 {
+    position: absolute;
+    top: 152px;
+    left: 20px;
+    z-index: 1;
+}
+
+#AFF-FrameContent{
+    width: 467px;
+    height: 279px;
+    position: absolute;
+    left: 77px;
+    top: 56px;
+    z-index: 2;
+}
+
+/* woo commerce */
+.woocommerce-page .page-title{
+    display: none;
+}
+.woocommerce-result-count{
+    display: none;
+}
+.woocommerce-ordering{
+    display: none;
+}
+.woocommerce-loop-product__title {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 22px;
+}
+.products .product a,
+.products .product a:link,
+.products .product a:visited{
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+}
+.products .product a:hover{
+    color: #000000;
+}
+
+ul.products.columns-4 li.product {
+	width: 30%;
+	float: left;
+	margin-right: 2%;
+}
+
+ul.products.columns-4 li.product:nth-of-type( 3n ) {
+    margin-right: 0;
+}
+
+ul.products.columns-4 li.product:nth-of-type( 4n ) {
+    clear:both;
+}
+
+.AFF-Cart{
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    text-align:right;
+    font-size: 20px;
+    margin: 8px 0 8px;
+}
+
+.woocommerce-product-gallery {
+    margin: 0 5px 5px 0;
+}
+.woocommerce .AFF-GenericBodyContent div.product p.price, 
+.woocommerce .AFF-GenericBodyContent div.product span.price,
+.woocommerce .AFF-GenericBodyContent ul.products li.product .price,
+.AFF-GenericBodyContent .woocommerce-Price-amount {
+    color: #e3490b;
+}
+
+.woocommerce .AFF-GenericBodyContent #respond input#submit, 
+.woocommerce .AFF-GenericBodyContent a.button, 
+.woocommerce .AFF-GenericBodyContent button.button, 
+.woocommerce .AFF-GenericBodyContent input.button
+.woocommerce .AFF-GenericBodyContent #respond input#submit.alt, 
+.woocommerce .AFF-GenericBodyContent a.button.alt, 
+.woocommerce .AFF-GenericBodyContent button.button.alt, 
+.woocommerce .AFF-GenericBodyContent input.button.alt,
+.AFF-GenericBodyContent .woocommerce #respond input#submit, 
+.AFF-GenericBodyContent .woocommerce a.button, 
+.AFF-GenericBodyContent .woocommerce button.button, 
+.AFF-GenericBodyContent .woocommerce input.button,
+.AFF-GenericBodyContent .woocommerce #respond input#submit.alt, 
+.AFF-GenericBodyContent .woocommerce a.button.alt, 
+.AFF-GenericBodyContent .woocommerce button.button.alt, 
+.AFF-GenericBodyContent .woocommerce input.button.alt
+{
+    background-color: #e3490b;
+    color: #e59908;
+}
+
+.woocommerce .AFF-GenericBodyContent #respond input#submit, 
+.woocommerce .AFF-GenericBodyContent a.button:hover, 
+.woocommerce .AFF-GenericBodyContent button.button:hover, 
+.woocommerce .AFF-GenericBodyContent input.button:hover
+.woocommerce .AFF-GenericBodyContent #respond input#submit.alt:hover, 
+.woocommerce .AFF-GenericBodyContent a.button.alt:hover, 
+.woocommerce .AFF-GenericBodyContent button.button.alt:hover, 
+.woocommerce .AFF-GenericBodyContent input.button.alt:hover,
+.AFF-GenericBodyContent .woocommerce #respond input#submit.alt:hover, 
+.AFF-GenericBodyContent .woocommerce a.button.alt:hover, 
+.AFF-GenericBodyContent .woocommerce button.button.alt:hover, 
+.AFF-GenericBodyContent .woocommerce input.button.alt:hover
+{
+    background-color: #e3490b;
+    color: #000000;
+}
+
+
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li.active{
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #e3490b;
+    border-color: #e3490b;
+    color: #000000;
+}
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #e5c588;
+    border-color: #e5c588;
+    color: #e3490b;
+}
+
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li a{
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+}
+
+.woocommerce .AFF-GenericBodyContent  div.product .woocommerce-tabs ul.tabs::before {
+    border-color: #e3490b;
+}
+
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li.active::before{
+    box-shadow: 2px 2px 0 #e3490b;
+    border-color: #e3490b;
+}
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li.active::after{
+    box-shadow: -2px 2px 0 #e3490b;
+    border-color: #e3490b;
+}
+
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li::after, 
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li::before {
+    border-color: #e5c588;
+}
+
+.woocommerce .AFF-GenericBodyContent div.product .woocommerce-tabs ul.tabs li::after {
+    box-shadow: -2px 2px 0 #e5c588;
+}
+
+.AFF-GenericBodyContent .woocommerce table.shop_table{
+    background-color: #e5c588;
+}
+
+.woocommerce .col-1 {
+    width: auto;
+    max-width: 100%;
+}
+.woocommerce .col-2 {
+    width: auto;
+    max-width: 100%;
+}
+.woocommerce form .form-row {
+    display:block;
 }

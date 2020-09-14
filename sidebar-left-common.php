@@ -11,7 +11,7 @@
 
 <div class="AFF-StarButtons">
 	<div class="AFF-Star">
-		<a href="<?= get_permalink(get_page_by_path( 'support-us' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/DonateButton_S.png" alt="Yellow Star Donate Button" id="AFF-DonateButton" class="AFF-Left-Images">
+		<a href="https://paypal.me/anaheimfallfestival" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/DonateButton_S.png" alt="Yellow Star Donate Button" id="AFF-DonateButton" class="AFF-Left-Images">
 		</a>
 	</div>
 	<br>

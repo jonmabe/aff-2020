@@ -1,6 +1,11 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -8,44 +13,61 @@
  */
 
 get_header();
+
+$col_count = 0;
+$tent_background_number = 0;
 ?>
-
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+<div class="col-md-auto" id="AFF-left-col">
+	<?php
+		get_sidebar('home-link');
+	?>
+	<div class="AFF-SidebarSmallBasicHeader"></div>
+	<?php
+		get_sidebar('left-common');
+	?>
+</div>
+<div class="col-md-auto" id="AFF-mid-col">
+	<?php
+		get_sidebar('nav');
+	?>
+	<div class="AFF-SmallBasicHeader">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/HistoryHeader.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
+	</div>
+	<div class="AFF-HistoryBody">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/ContestMiddleStar.png" alt="Stars" id="AFF-HistoryMiddleStar">
+		<div id="primary" class="site-main">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) : the_post(); 
+				//$image = get_field('thumbnail_image');
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
+				$rotate_image_degrees = rand(-2,2);
+				if($tent_background_number == 2)
+					$tent_background_number = 1;
+				else $tent_background_number++;
+			?>
+				<div class="container AFF-HistoryContainer AFF-HistoryC0<?= $tent_background_number ?>">
+					<a href="<?= the_permalink() ?>"><? the_post_thumbnail('festival-act-thumbnail', false, array( "class" => "AFF-History-Image0".$tent_background_number, "style" => "transform: rotate(". $rotate_image_degrees ."deg);")); ?></a>
+					<div class="row">
+						<div class="col AFF-HistoryTitle0<?= $tent_background_number ?>">
+							<a href="<?= the_permalink() ?>"><?= the_title() ?></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col AFF-HistoryInfo0<?= $tent_background_number ?>">
+							<?php the_excerpt() ?>
+							<a href="<?= the_permalink() ?>" class="AFF-HistoryBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ReadMoreBtn.png" alt="Entry Form Button Yellow Text Black Background"></a>
+						</div>
+					</div>
+				</div>
+			<?php
+				$col_count++;
 			endwhile;
 
 			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
+			?>
+		</div>
 <?php
+wp_reset_postdata(); 
+
 get_sidebar();
 get_footer();

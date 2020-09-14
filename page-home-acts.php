@@ -69,6 +69,10 @@ $tent_background_number = 0;
 	<div class="AFF-MainBodyContent">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/BottomLeftStars_S.png" alt="Two 5-point Stars, One Solid Black, One Black Outline" id="AFF-BottomLeftStars">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FeaturingArrow_S.png" alt="Banner with 2 Descending Folds Ending in Arrow Pointing Down, Text on Top Fold: Always Fun! Always Free!, Text on Bottom Fold: Featuring" id="AFF-FeaturingArrow">
+		<div id="AFF-FrameContent">
+			<iframe width="467" height="279" src="https://www.youtube.com/embed/5qky3L2Q6G4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<!--<iframe src="https://player.twitch.tv/?video=739547871&parent=aff.local" frameborder="0" allowfullscreen="true" scrolling="no" height="279" width="467"></iframe>-->
+		</div>
 		<div id="primary" class="site-main container AFF-Tents">
 			<?php
 			while ( $loop->have_posts() ) : $loop->the_post(); 

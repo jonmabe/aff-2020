@@ -8,12 +8,12 @@
  */
 
 ?>
-<div class="AFF-SupportFooter">
+	</div>
+	<div class="AFF-SupportFooter">
 		<footer id="colophon" class="site-footer">
 			<h4>&copy; 2020, The Anaheim Fall Festival & Halloween Parade is a Registered 501(c)3 Non-Profit</h4>
 		</footer><!-- #colophon -->
 	</div>
-</div>
 </div>
 
 <div class="col-md-auto" id="AFF-right-col">

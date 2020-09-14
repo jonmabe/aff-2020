@@ -39,11 +39,19 @@ if($cart_count > 0) {
 	<a href="<?= get_permalink(get_page_by_path( 'shop' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ShopHeader.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>"></a>
 	</div>
 	<div class="AFF-GenericBodyContent">
-		<?php if($cart_count) : ?>
-		<div class="AFF-Cart"><a href="<?= $cart_url ?>">(<?= $cart_count ?>) Items in Cart</a></div>
-		<?php endif; ?>
-		<?php woocommerce_content(); ?>
-		<div style="clear:both"></div>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
 <?php
 
 

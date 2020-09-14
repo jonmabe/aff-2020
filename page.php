@@ -14,16 +14,6 @@
 
 get_header();
 
-$args = array(  
-	'post_type' => 'festivalact',
-	'post_status' => 'publish',
-	//'posts_per_page' => 8, 
-	'orderby' => 'title', 
-	'order' => 'ASC', 
-);
-$loop = new WP_Query( $args ); 
-$col_count = 0;
-$tent_background_number = 0;
 ?>
 <div class="col-md-auto" id="AFF-left-col">
 	<?php

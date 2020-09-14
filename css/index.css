@@ -334,6 +334,11 @@ h4 {
     text-align: center;
     width: 165px;
 }
+#AFF-right-col-blank {
+    background-color: #e59908;
+    text-align: center;
+    width: 165px;
+}
 #AFF-SupportArrow {
     margin-top: 20px;
 }
@@ -866,6 +871,88 @@ h4 {
     left: 77px;
     top: 56px;
     z-index: 2;
+}
+
+/* CraftSub Page Specific */
+.AFF-CraftName {
+    position: absolute;
+    width: 359px;
+    height: 57px;
+    top: 214px;
+    left: 223px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AFF-CraftName h2 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+    text-align: center;
+    font-size: 30px;
+}
+#AFF-CraftsHeaderSub {
+    position: relative;
+    margin-left: -135px;
+    z-index: 2;
+}
+.AFF-SponsorCircle {
+    position: absolute;
+    top: 247px;
+    left: 560px;
+    z-index: 1;
+}
+.AFF-CraftsSubBody {
+    width: 100%;
+    position: relative;
+}
+.AFF-CraftContainer {
+    width: 100%;
+    margin-left: -140px;
+}
+.AFF-CraftStepPhotoContainer {
+    background-color: #e5c588;
+    padding: 10px;
+    text-align: center;
+}
+.AFF-CraftStepContainer h3 {
+    font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+    text-align: left;
+    font-size: 25px;
+}
+.AFF-CraftStepContainer p {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    text-align: left;
+    font-size: 18px;
+}
+.AFF-ThanksFooter {
+    width: 100%;
+    background-color: #e3490b;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+}
+.AFF-ThanksFooter h3 {
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 30px;
+}
+.AFF-ThanksFooter h4 a {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e59908;
+    font-size: 25px;
+}
+.AFF-ThanksFooter h4 a:hover {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000000;
+    font-size: 25px;
+}
+#AFF-mid-col-craft {
+    background-color: #e59908;
+    width: 805px;
+    padding-bottom: 300px;
 }
 
 /* woo commerce */

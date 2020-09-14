@@ -15,7 +15,8 @@
 		</footer><!-- #colophon -->
 	</div>
 </div>
-
+<?php if(get_post_type() == "craft") : ?>
+<?php else : ?>
 <div class="col-md-auto" id="AFF-right-col">
 <div class="AFF-ParadeButton">
 	<a class="AFF-nav-link" href="<?= get_permalink(get_page_by_path( 'parade' )) ?>">PARADE</a>
@@ -63,3 +64,4 @@
 	?>
 </aside><!-- #secondary -->
 </div>
+<?php endif; ?>

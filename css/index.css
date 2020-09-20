@@ -694,6 +694,13 @@ h4 {
     font-size: 30px;
     line-height: 20px;
 }
+.AFF-CraftSignoff{
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
 #AFF-MSRightStar01 {
     position: absolute;
     top: 370px;

@@ -65,6 +65,11 @@ get_header();
 			</div>
 			<?php endwhile; ?>
 		</div>
+		<?php if(get_field('signoff')) : ?>
+		<div class="AFF-CraftSignoff">
+			<?= get_field('signoff') ?>
+		</div>
+		<?php endif; ?>
 		<div class="AFF-ThanksFooter">
 			<h3>THANKS <?= the_field('sponsor_name') ?> FOR YOUR PARTNERSHIP</h3>
 			<h4><a href="<?= the_field('sponsor_link') ?>" target="_blank"><?= the_field('sponsor_link_text') ?></a></h4>

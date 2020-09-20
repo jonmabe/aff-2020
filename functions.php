@@ -433,3 +433,4 @@ function woocommmerce_style() {
 	wp_enqueue_style('woocommerce_stylesheet', WP_PLUGIN_URL. '/woocommerce/assets/css/woocommerce.css',false,'1.0',"all");
  }
  add_action( 'wp_head', 'woocommmerce_style' );
+

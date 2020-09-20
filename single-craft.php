@@ -33,17 +33,21 @@ get_header();
 		get_sidebar('nav');
 	?>
 	<div class="AFF-CraftsHeaderSub">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/CraftsHeaderSub.png" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>" id="AFF-CraftsHeaderSub">
+		<a href="<?= get_permalink(get_page_by_path( 'crafts' )) ?>" rel="prev">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/CraftsHeaderSub.png" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>" id="AFF-CraftsHeaderSub">
+		</a>
 		<div class="AFF-CraftName">
 			<h2><?= the_title() ?></h2>
 		</div>
 		<div class="circular-logo AFF-SponsorCircle">
+			<a href="<?= the_field('sponsor_link') ?>" target="_blank">
 			<?php 
 			$sponsor_logo = get_field('sponsor_logo');
 			if($sponsor_logo){
 				echo wp_get_attachment_image( $sponsor_logo['ID'], array(177,177) );
 			}
 			?>
+			</a>
 		</div>
 	</div>
 	<div class="AFF-CraftsSubBody">
@@ -74,8 +78,10 @@ get_header();
 			<h3>THANKS <?= the_field('sponsor_name') ?> FOR YOUR PARTNERSHIP</h3>
 			<h4><a href="<?= the_field('sponsor_link') ?>" target="_blank"><?= the_field('sponsor_link_text') ?></a></h4>
 		</div>
-		<div class="AFF-SupportFooter">
-			<h4>The Anaheim Fall Festival & Halloween Parade is a Registered 501(c)3 Non-Profit</h4>
+		<div class="nav-links">
+			<div class="nav-previous">
+				<a href="<?= get_permalink(get_page_by_path( 'crafts' )) ?>" rel="prev">&lt; Back to all Crafts</a>
+			</div>
 		</div>
 
 <?php

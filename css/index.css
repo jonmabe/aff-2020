@@ -70,6 +70,15 @@ h3 {
     font-size: 18px;
 }
 
+.list-dot {
+    display:inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/ListDot.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
 .AFF-container {
     width: 1000px !important;
     min-width: 1000px !important;

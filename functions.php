@@ -434,3 +434,32 @@ function woocommmerce_style() {
  }
  add_action( 'wp_head', 'woocommmerce_style' );
 
+
+ function aff_customize_register( $wp_customize ) {
+
+	$wp_customize->add_section( 'aff_section' , array(
+		'title'      => __( 'AFF Theme Options', 'afftheme' ),
+		'priority'   => 30,
+	) );
+	
+	$wp_customize->add_setting(
+		'aff_parade_flyer',
+		array(
+			'default'      => '',
+			'transport'    => 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'aff_parade_flyer',
+			array(
+				'label'    => 'AFF Parade Flyer',
+				'settings' => 'aff_parade_flyer',
+				'section'  => 'aff_section'
+			)
+		)
+	);
+ }
+ add_action( 'customize_register', 'aff_customize_register' );

@@ -59,8 +59,42 @@ get_header();
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/BottomLeftStars_S.png" alt="Two 5-point Stars, One Solid Black, One Black Outline" id="AFF-BottomLeftStars">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FeaturingArrow_S.png" alt="Banner with 2 Descending Folds Ending in Arrow Pointing Down, Text on Top Fold: Always Fun! Always Free!, Text on Bottom Fold: Featuring" id="AFF-FeaturingArrow">
 		<div id="AFF-FrameContent">
-			<iframe width="467" height="279" src="https://www.youtube.com/embed/5qap5aO4i9A?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<!--<iframe src="https://player.twitch.tv/?video=739547871&parent=aff.local" frameborder="0" allowfullscreen="true" scrolling="no" height="279" width="467"></iframe>-->
+			<?php 
+				$i = 0;
+			?>
+			<?php while( have_rows('frame_items') ) : the_row(); ?>
+			<?php if(get_sub_field('active')) : ?>
+			<div class="AFF-FrameContent-Item" id="AFF-FrameContent-Item-<?= $i ?>">
+				<?php
+					$embed_code = get_sub_field('embed_code');
+					if($embed_code) {
+						echo $embed_code;
+					} else {
+						$image = get_sub_field('image');
+						?><a href="<?= get_sub_field('link') ?>" target="_blank"><?= wp_get_attachment_image($image['ID'], array(467, 285)) ?></a><?php
+					}
+				?>
+			</div>
+			<?php 
+				$i++;
+			?>
+			<?php endif; ?>
+			<?php endwhile; ?>
+			<script>
+				var currentItem = 0;
+				var frameItems = <?= $i ?>;
+				function swapFrameItem() 
+				{ 
+					var nextItem = currentItem + 1 == frameItems ? 0 : currentItem + 1;
+					jQuery('#AFF-FrameContent-Item-'+ currentItem).removeClass('AFF-FrameContent-Item-Active');
+					jQuery('#AFF-FrameContent-Item-'+ nextItem).addClass('AFF-FrameContent-Item-Active');
+
+					currentItem = nextItem;
+					setTimeout("swapFrameItem()",10000);
+				} 
+				jQuery('#AFF-FrameContent-Item-'+ currentItem).addClass('AFF-FrameContent-Item-Active');
+				setTimeout("swapFrameItem()",10000);
+			</script>
 		</div>
 		<div id="primary" class="site-main container AFF-Tents">
 			<?php

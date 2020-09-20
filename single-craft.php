@@ -14,12 +14,10 @@
 
 add_filter( 'wp_nav_menu_items', 'aff_craft_menu_items', 10, 2 );
 function aff_craft_menu_items ( $items, $args ) {
-	$link = get_permalink(get_page_by_path( 'parade' ));
-    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4034"><a href="'. $link .'">PARADE</a></li>';
+	$link = get_theme_mod('aff_parade_flyer');
+    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4034"><a href="'. $link .'" target="_blank">PARADE</a></li>';
     return $items;
 }
-
-
 
 get_header();
 ?>

@@ -893,8 +893,24 @@ h4 {
     height: 279px;
     position: absolute;
     left: 77px;
-    top: 56px;
+    top: 54px;
     z-index: 2;
+}
+
+.AFF-FrameContent-Item{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: opacity .33s ease-in-out;
+    -moz-transition: opacity .33s ease-in-out;
+    -webkit-transition: opacity .33s ease-in-out;
+    z-index: 0;
+}
+
+.AFF-FrameContent-Item-Active{
+    opacity: 1;
+    z-index: 1;
 }
 
 /* CraftSub Page Specific */

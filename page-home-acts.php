@@ -13,17 +13,6 @@
  */
 
 get_header();
-
-$args = array(  
-	'post_type' => 'festivalact',
-	'post_status' => 'publish',
-	//'posts_per_page' => 8, 
-	'orderby' => 'title', 
-	'order' => 'ASC', 
-);
-$loop = new WP_Query( $args ); 
-$col_count = 0;
-$tent_background_number = 0;
 ?>
 <div class="col-md-auto" id="AFF-left-col">
 	<?php
@@ -70,13 +59,17 @@ $tent_background_number = 0;
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/BottomLeftStars_S.png" alt="Two 5-point Stars, One Solid Black, One Black Outline" id="AFF-BottomLeftStars">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FeaturingArrow_S.png" alt="Banner with 2 Descending Folds Ending in Arrow Pointing Down, Text on Top Fold: Always Fun! Always Free!, Text on Bottom Fold: Featuring" id="AFF-FeaturingArrow">
 		<div id="AFF-FrameContent">
-			<iframe width="467" height="279" src="https://www.youtube.com/embed/5qky3L2Q6G4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="467" height="279" src="https://www.youtube.com/embed/5qap5aO4i9A?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<!--<iframe src="https://player.twitch.tv/?video=739547871&parent=aff.local" frameborder="0" allowfullscreen="true" scrolling="no" height="279" width="467"></iframe>-->
 		</div>
 		<div id="primary" class="site-main container AFF-Tents">
 			<?php
-			while ( $loop->have_posts() ) : $loop->the_post(); 
-				$image = get_field('thumbnail_photo');
+			$menu_items = wp_get_nav_menu_items('Home Page');
+			$col_count = 0;
+			$tent_background_number = 0;
+
+			foreach($menu_items as $menu_item) :
+				$image = get_field('tent_image', $menu_item->ID);
 				$rotate_image_degrees = rand(-2,2);
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
@@ -89,7 +82,7 @@ $tent_background_number = 0;
 						<div class="container AFF-TentContainer">
 							<div class="row">
 								<div class="col">
-									<a href="<? the_permalink() ?>">
+									<a href="<?= $menu_item->url ?>">
 										<? if ($image) {
 											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
 										} ?>
@@ -98,7 +91,7 @@ $tent_background_number = 0;
 							</div>
 							<div class="row">
 								<div class="col">
-									<h3><a href="<? the_permalink() ?>"><? the_field('name') ?></a></h3>
+									<h3><a href="<?= $menu_item->url ?>"><?= $menu_item->title ?></a></h3>
 								</div>
 							</div>
 						</div>
@@ -108,7 +101,7 @@ $tent_background_number = 0;
 				<?php } ?>
 			<?php
 				$col_count++;
-			endwhile;
+			endforeach;
 			?>
 			<? if(($col_count) % 3 != 0) { ?>
 				</div>

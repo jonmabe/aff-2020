@@ -12,6 +12,15 @@
  * @package _s
  */
 
+add_filter( 'wp_nav_menu_items', 'aff_craft_menu_items', 10, 2 );
+function aff_craft_menu_items ( $items, $args ) {
+	$link = get_permalink(get_page_by_path( 'parade' ));
+    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4034"><a href="'. $link .'">PARADE</a></li>';
+    return $items;
+}
+
+
+
 get_header();
 ?>
 <div class="col-md-auto" id="AFF-left-col">
@@ -28,23 +37,37 @@ get_header();
 		<div class="AFF-CraftName">
 			<h2><?= the_title() ?></h2>
 		</div>
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/SponsorCircle.png" alt="Beige Circle with Sponsor Logo" class="AFF-SponsorCircle">
+		<div class="circular-logo AFF-SponsorCircle">
+			<?php 
+			$sponsor_logo = get_field('sponsor_logo');
+			if($sponsor_logo){
+				echo wp_get_attachment_image( $sponsor_logo['ID'], array(177,177) );
+			}
+			?>
+		</div>
 	</div>
 	<div class="AFF-CraftsSubBody">
 		<div class="container AFF-CraftContainer">
+			<?php while( have_rows('steps') ) : the_row(); ?>
 			<div class="row">
 				<div class="col-md-auto AFF-CraftStepPhotoContainer">
-					<img src="images/CraftImage01.png" alt="Step01" class="AFF-CraftStepPhoto">
+					<?php 
+					$step_image = get_sub_field('image');
+					if($step_image){
+						echo wp_get_attachment_image( $step_image['ID'], array(162,162), false, array('class'=>'AFF-CraftStepPhoto'));
+					}
+					?>
 				</div>
 				<div class="col-md-auto AFF-CraftStepContainer">
-					<h3>Title Here</h3>
-					<p>Text Here</p>
+					<h3><?= get_sub_field('title') ?></h3>
+					<p><?= get_sub_field('description') ?></p>
 				</div>
 			</div>
+			<?php endwhile; ?>
 		</div>
 		<div class="AFF-ThanksFooter">
-			<h3>THANKS MUZEO FOR YOUR PARTNERSHIP</h3>
-			<h4><a href="#">www.MUZEO.org</a></h4>
+			<h3>THANKS <?= the_field('sponsor_name') ?> FOR YOUR PARTNERSHIP</h3>
+			<h4><a href="<?= the_field('sponsor_link') ?>" target="_blank"><?= the_field('sponsor_link_text') ?></a></h4>
 		</div>
 		<div class="AFF-SupportFooter">
 			<h4>The Anaheim Fall Festival & Halloween Parade is a Registered 501(c)3 Non-Profit</h4>

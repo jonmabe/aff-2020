@@ -72,6 +72,7 @@ h3 {
 
 .AFF-container {
     width: 1000px !important;
+    min-width: 1000px !important;
 }
 #AFF-left-col {
     background-color: #e3490b;
@@ -187,6 +188,7 @@ h3 {
 .AFF-nav-link, .AFF-Nav li a,
 .nav-links a{
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     font-size: 17px;
     color: #000000;
     margin: auto;
@@ -201,6 +203,7 @@ h3 {
 }
 .AFF-Active a {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     font-size: 17px;
     color: #e3490b;
     margin: auto;
@@ -215,6 +218,7 @@ h3 {
     width: 100%;
     position: relative;
     left: 0;
+    padding-bottom: 50px;
 }
 .AFF-MainBodyContent {
     background-image: url(../images/FrameHP.png);
@@ -223,6 +227,7 @@ h3 {
     width: 100%;
     position: relative;
     padding-top: 481px;
+    padding-bottom: 50px;
 }
 #AFF-HeaderLogo {
     position: relative;
@@ -295,6 +300,7 @@ h3 {
 .AFF-ArtistsTent h3,
 .AFF-CraftsTent h3 {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     font-size: 12px;
     color: #e3490b;
     margin-top: 5px;
@@ -303,6 +309,7 @@ h3 {
 .AFF-ArtistsTent h3 a,
 .AFF-CraftsTent h3 a {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     font-size: 12px;
     color: #e3490b;
 }
@@ -310,6 +317,7 @@ h3 {
 .AFF-ArtistsTent h3 a:hover,
 .AFF-CraftsTent h3 a:hover {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     font-size: 12px;
     color: #000000;
     text-decoration: none;
@@ -896,6 +904,20 @@ h4 {
     margin-left: -135px;
     z-index: 2;
 }
+
+.circular-logo {
+    position: relative;
+    width: 177px;
+    height: 177px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+  
+.circular--logo img {
+    width: 100%;
+    height: auto;
+}
+
 .AFF-SponsorCircle {
     position: absolute;
     top: 247px;
@@ -909,19 +931,32 @@ h4 {
 .AFF-CraftContainer {
     width: 100%;
     margin-left: -140px;
+    margin-top: 30px;
+}
+.AFF-CraftContainer .row {
+    margin-bottom: 30px;
 }
 .AFF-CraftStepPhotoContainer {
     background-color: #e5c588;
     padding: 10px;
     text-align: center;
+    height: 182px;
+}
+.AFF-CraftStepPhoto{
+    width: 162px;
+    height: 162px;
+}
+.AFF-CraftStepContainer{
+    width: 590px;
 }
 .AFF-CraftStepContainer h3 {
     font-family: Anderson Torchy, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: lowercase !important;
     color: #e3490b;
     text-align: left;
     font-size: 25px;
 }
-.AFF-CraftStepContainer p {
+.AFF-CraftStepContainer, .AFF-CraftStepContainer p {
     font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #000000;
     text-align: left;

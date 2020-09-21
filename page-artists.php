@@ -67,7 +67,6 @@ $tent_background_number = 0;
 	<div class="AFF-ArtistsBody">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSRightStar01.png" alt="Stars" id="AFF-MSRightStar01">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSLeftStars.png" alt="Stars" id="AFF-MSLeftStars">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSRightStars02.png" alt="Stars" id="AFF-MSRightStars02">
 		<div id="primary" class="site-main container AFF-ArtistsTents">
 			<?php
 			while ( $loop->have_posts() ) : $loop->the_post(); 

@@ -56,7 +56,7 @@ get_header();
 					<?php 
 					$step_image = get_sub_field('image');
 					if($step_image){
-						echo wp_get_attachment_image( $step_image['ID'], array(162,162), false, array('class'=>'AFF-CraftStepPhoto'));
+						echo wp_get_attachment_image( $step_image['ID'], 'festival-craft-nocrop', false, array('class'=>'AFF-CraftStepPhoto'));
 					}
 					?>
 				</div>

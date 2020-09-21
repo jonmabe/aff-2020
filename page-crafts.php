@@ -79,11 +79,13 @@ $tent_background_number = 0;
 						<div class="container AFF-CraftsTentContainer">
 							<div class="row">
 								<div class="col">
+									<div class="AFF-Tent-ImageContainer">
 									<a href="<? the_permalink() ?>">
 										<? if ($image) {
-											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
+											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail-nocrop', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
 										} ?>
 									</a>
+									</div>
 								</div>
 							</div>
 							<div class="row">

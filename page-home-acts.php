@@ -116,11 +116,13 @@ get_header();
 						<div class="container AFF-TentContainer">
 							<div class="row">
 								<div class="col">
+									<div class="AFF-Tent-ImageContainer">
 									<a href="<?= $menu_item->url ?>">
 										<? if ($image) {
-											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
+											echo wp_get_attachment_image($image['ID'], 'festival-act-thumbnail-nocrop', false, array( "class" => "AFF-Tent-Image", "style" => "transform: rotate(". $rotate_image_degrees ."deg);"));
 										} ?>
 									</a>
+									</div>
 								</div>
 							</div>
 							<div class="row">

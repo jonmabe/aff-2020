@@ -198,6 +198,9 @@ add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 // Register Custom Post Type
 function custom_post_types() {
 	add_image_size( 'festival-act-thumbnail', 132, 132, TRUE );
+	add_image_size( 'festival-act-thumbnail-nocrop', 132, 132, FALSE );
+	add_image_size( 'festival-craft-nocrop', 162, 162, FALSE );
+	add_image_size( 'festival-artist-main', 610, 0, FALSE );
 
 	$labels = array(
 		'name'                  => _x( 'Festival Acts', 'Post Type General Name', 'festival_act' ),
@@ -441,7 +444,7 @@ function woocommmerce_style() {
 		'title'      => __( 'AFF Theme Options', 'afftheme' ),
 		'priority'   => 30,
 	) );
-	
+
 	$wp_customize->add_setting(
 		'aff_parade_flyer',
 		array(

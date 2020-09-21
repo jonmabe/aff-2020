@@ -303,7 +303,15 @@ h3 {
     background-image: url(../images/Tent06_S.png) !important;
 }
 .AFF-Tent-Image {
-    margin-top: 100px;
+}
+
+.AFF-Tent-ImageContainer{
+    margin: 100px auto 0;
+    height: 132px;
+    width: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .AFF-Tent h3,
 .AFF-ArtistsTent h3,
@@ -973,10 +981,12 @@ h4 {
     padding: 10px;
     text-align: center;
     height: 182px;
+    width: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .AFF-CraftStepPhoto{
-    width: 162px;
-    height: 162px;
 }
 .AFF-CraftStepContainer{
     width: 590px;

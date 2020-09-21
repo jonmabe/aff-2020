@@ -142,7 +142,7 @@ $tent_background_number = 0;
 							</div>
 							<div class="row">
 								<div class="col">
-									<h3><a href="<? the_permalink() ?>"><? the_field('name') ?></a></h3>
+									<h3><a href="<? the_permalink() ?>"><? the_title() ?></a></h3>
 								</div>
 							</div>
 						</div>

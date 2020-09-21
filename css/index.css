@@ -416,6 +416,7 @@ h4 {
     margin: 10px auto 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .AFF-SponsorLogo {
     width: 114px;

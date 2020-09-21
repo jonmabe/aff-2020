@@ -94,7 +94,7 @@ $tent_background_number = 0;
 							</div>
 							<div class="row">
 								<div class="col">
-									<h3><a href="<?= get_field('website') ?>" target="_blank"><? the_field('name') ?></a></h3>
+									<h3><a href="<?= get_field('website') ?>" target="_blank"><? the_title() ?></a></h3>
 								</div>
 							</div>
 						</div>

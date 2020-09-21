@@ -201,6 +201,7 @@ function custom_post_types() {
 	add_image_size( 'festival-act-thumbnail-nocrop', 132, 132, FALSE );
 	add_image_size( 'festival-craft-nocrop', 162, 162, FALSE );
 	add_image_size( 'festival-artist-main', 610, 0, FALSE );
+	add_image_size( 'aff-thanks-logo', 114, 114, FALSE );
 
 	$labels = array(
 		'name'                  => _x( 'Festival Acts', 'Post Type General Name', 'festival_act' ),

@@ -27,12 +27,13 @@
 	if( have_rows('tier_1_sponsors') ):
 		while ( have_rows('tier_1_sponsors') ) : the_row();
 			$image = get_sub_field('image');
-			$image_url = $image ? $image['url'] : "";
 			$url = get_sub_field('url');
 			$description = get_sub_field('description');
 			?>
 			<div class="AFF-Sponsor">
-				<a href="#"><img src="<?= $image_url ?>" alt="<?= $description ?>" class="AFF-SponsorLogo"></a>
+				<a href="<?= $url['url'] ?>" target="_blank">
+					<?php echo wp_get_attachment_image($image['ID'], 'aff-thanks-logo', array( 'class' => 'AFF-SponsorLogo')); ?>
+				</a>
 			</div>
 			<?php
 		endwhile;

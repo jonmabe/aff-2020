@@ -92,6 +92,7 @@ h3 {
 #AFF-SmallBasicHeader {
     margin-left: -190px;
     position: relative;
+    z-index: 1;
 }
 .AFF-SidebarSmallBasicHeader{
     height:200px;
@@ -237,6 +238,7 @@ h3 {
     position: relative;
     padding-top: 481px;
     padding-bottom: 50px;
+    margin-top: -80px;
 }
 #AFF-HeaderLogo {
     position: relative;
@@ -304,6 +306,35 @@ h3 {
 }
 .AFF-Tent-Image {
 }
+.AFF-ActPerformances h2,
+.AFF-MSTents h2 {
+    text-align: center;
+    color: #e3490b;
+    font-size: 30px;
+    margin: 20px 0 0;
+}
+.AFF-ActPerformances p,
+.AFF-MSTents p{
+    text-align: center !important;
+}
+.AFF-Act-FrameContent{
+    position: absolute;
+    left: 62px;
+    top: 20px;
+    width: 503px;
+    height: 307px;
+}
+
+.AFF-MainStage-Performace{
+    position: relative;
+}
+
+
+.AFF-MainStage-Performace .AFF-Act-FrameContent{
+    left: 22px;
+    top: 78px;
+}
+
 
 .AFF-Tent-ImageContainer{
     margin: 100px auto 0;
@@ -312,6 +343,15 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+    text-align: center;
+    font-size: 32px;
+}
+.AFF-Tent-Upcoming .AFF-Tent-ImageContainer,
+.AFF-Tent-Upcoming h3{
+    color: #333333 !important;
 }
 .AFF-Tent h3,
 .AFF-ArtistsTent h3,
@@ -430,6 +470,7 @@ h4 {
 .AFF-ContestBody {
     width: 100%;
     position: relative;
+    padding-bottom:50px;
 }
 #AFF-ContestMiddleStar {
     position: absolute;
@@ -537,6 +578,7 @@ h4 {
 .AFF-MainStageBody {
     width: 100%;
     position: relative;
+    padding-bottom:30px;
 }
 .AFF-MSTents {
     width: 570px;
@@ -741,7 +783,7 @@ h4 {
     position: absolute;
     width: 359px;
     height: 57px;
-    top: 194px;
+    top: 210px;
     left: 150px;
     z-index: 4;
     display: flex;
@@ -755,7 +797,10 @@ h4 {
     font-size: 30px;
 }
 #AFF-Frame {
-    margin-top: 40px;
+    margin-top: -40px;
+}
+.AFF-Past-Performances #AFF-Frame{
+    margin: 20px 0 0 -40px;
 }
 .AFF-MainStageBody p {
     font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -808,6 +853,7 @@ h4 {
 }
 .AFF-HistoryBody {
     width: 100%;
+    padding-bottom: 50px;
 }
 #AFF-HistoryMiddleStar {
     position: absolute;

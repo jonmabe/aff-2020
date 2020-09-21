@@ -49,6 +49,7 @@ $tent_background_number = 0;
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSRightStar01.png" alt="Stars" id="AFF-MSRightStar01">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSLeftStars.png" alt="Stars" id="AFF-MSLeftStars">
 		<div id="primary" class="site-main container AFF-MSTents">
+			<?php if(have_rows('performances')) : ?>
 			<h2>Performances</h2>
 			<p>Rewatch past performances by clicking below!</p>
 			<?php 
@@ -111,6 +112,7 @@ $tent_background_number = 0;
 			<? if(($col_count) % 3 != 0) { ?>
 				</div>
 			<?php } ?>
+			<?php endif; ?>
 			
 			<h2>Acts</h2>
 			<?php
@@ -155,13 +157,12 @@ $tent_background_number = 0;
 			<? if(($col_count) % 3 != 0) { ?>
 				</div>
 			<?php } ?>
-
+			<?php wp_reset_postdata(); ?>
+			<?php if(have_rows('performances')) : ?>
 			<div class="AFF-Past-Performances">
 				<h2>Performances</h2>
 				<p>Rewatch past performances by clicking below!</p>
 				<?php 
-				wp_reset_postdata();
-				if(have_rows('performances')) :
 					while( have_rows('performances') ) : the_row(); 
 						$performance_date = strtotime(get_sub_field('date'));
 						if($performance_date <= time()){
@@ -177,9 +178,9 @@ $tent_background_number = 0;
 							<?php
 						}
 					endwhile;
-				endif;
 				?>
 			</div>
+			<?php endif; ?>
 		</div>
 
 <?php

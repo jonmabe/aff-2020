@@ -51,6 +51,7 @@ get_header();
 		<p><?= get_field('description') ?></p>
 
 		<div id="primary" class="site-main container AFF-MSTents AFF-ActPerformances">
+			<?php if(have_rows('performances')) : ?>
 			<h2>Performances</h2>
 			<p>Rewatch past performances by clicking below!</p>
 			<?php 
@@ -112,6 +113,7 @@ get_header();
 			<? if(($col_count) % 3 != 0) { ?>
 				</div>
 			<?php } ?>
+			<?php endif; ?>
 		</div>
 
 		<div class="nav-links">

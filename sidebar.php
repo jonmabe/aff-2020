@@ -38,27 +38,25 @@
 			<?php
 		endwhile;
 	endif;
-	wp_reset_postdata();
 ?>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/ThanksArrow-text_S.png" alt="Text: Big Thanks, Image: Yellow Down Arrow" id="AFF-ThanksArrow">
 <div class="AFF-Thanks">
+	<?php
+	$special_thanks_text = get_field('special_thanks', false, false);
+	$special_thanks = explode("\n", $special_thanks_text);
+	if($special_thanks_text) : ?>
 	<ul>
 		<?php
-		$args = array(  
-			'post_type' => array('artist', 'festivalact'),
-			'post_status' => 'publish',
-			//'posts_per_page' => 8, 
-			'orderby' => 'title', 
-			'order' => 'ASC', 
-		);
-		$loop = new WP_Query( $args ); 
-		while ( $loop->have_posts() ) : $loop->the_post(); 
-			?><li class="AFF-Thanks-Name"><a href="<?= get_permalink() ?>"><?= the_title() ?></a></li><?
-		endwhile;
-		wp_reset_postdata();
+		foreach($special_thanks as $name){
+			?><li class="AFF-Thanks-Name"><?= $name ?></li><?
+		}
 	?>
+	<?php endif; ?>
 	</ul>
 </div>
+<?php
+wp_reset_postdata();
+?>
 <aside id="secondary" class="widget-area">
 	<?php
 		dynamic_sidebar( 'sidebar-1' );

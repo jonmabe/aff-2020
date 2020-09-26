@@ -41,18 +41,24 @@
 ?>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/ThanksArrow-text_S.png" alt="Text: Big Thanks, Image: Yellow Down Arrow" id="AFF-ThanksArrow">
 <div class="AFF-Thanks">
-	<?php
-	$special_thanks_text = get_field('special_thanks', false, false);
-	$special_thanks = explode("\n", $special_thanks_text);
-	if($special_thanks_text) : ?>
-	<ul>
+	<?php if(is_archive() || is_single()) : ?>
+		<div class="AFF-Sponsor AFF-Sponsor-Small">
+			<a href="http://www.anaheimhistoricalsociety.com/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimHistoricalSocietyLogo.png" ?" /></a>
+		</div>
+	<?php else : ?>
 		<?php
-		foreach($special_thanks as $name){
-			?><li class="AFF-Thanks-Name"><?= $name ?></li><?
-		}
-	?>
-	<?php endif; ?>
-	</ul>
+		$special_thanks_text = get_field('special_thanks', false, false);
+		$special_thanks = explode("\n", $special_thanks_text);
+		if($special_thanks_text) : ?>
+		<ul>
+			<?php
+			foreach($special_thanks as $name){
+				?><li class="AFF-Thanks-Name"><?= $name ?></li><?
+			}
+		?>
+		<?php endif; ?>
+		</ul>
+		<?php endif; ?>
 </div>
 <?php
 wp_reset_postdata();

@@ -16,6 +16,9 @@ get_header();
 	?>
 	<div class="AFF-SidebarSmallBasicHeader"></div>
 	<?php
+		get_sidebar('history');
+	?>
+	<?php
 		get_sidebar('left-common');
 	?>
 </div>
@@ -24,7 +27,7 @@ get_header();
 		get_sidebar('nav');
 	?>
 	<div class="AFF-SmallBasicHeader">
-		<a href="<?= get_category_link(get_cat_ID( 'history' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/HistoryHeader.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>"></a>
+		<a href="<?= get_category_link(get_cat_ID( 'history' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/HistoryHeader-New2.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>"></a>
 	</div>
 	<div class="AFF-HistoryBody">
 		<div id="primary" class="site-main">

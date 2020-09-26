@@ -134,12 +134,14 @@ h3 {
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0px;
     font-size: 10px;
     line-height: 20px;
 }
 .AFF-Poem {
     margin-bottom: 8px !important;
 }
+
 .AFF-Indent {
     text-indent: 13px;
 }
@@ -418,6 +420,9 @@ h4 {
     align-items: center;
     justify-content: center;
 }
+.AFF-Sponsor-Small{
+    height: 65px;
+}
 .AFF-SponsorLogo {
     width: 114px;
 }
@@ -596,7 +601,7 @@ h4 {
     background-image: url(../images/LeftBanner.png);
     background-repeat: no-repeat;
     background-position: center top;
-    padding: 160px 1px 130px 0px;
+    padding: 160px 32px 130px 19px;
     margin-top: 160px;
     height: 691px;
 }
@@ -607,6 +612,40 @@ h4 {
     margin-left: -10px;
     font-size: 14px;
     line-height: 20px;
+}
+.AFF-SpecialAnnouncements-History-Header{
+    font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.AFF-SpecialAnnouncements-History{
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e3490b;
+    text-align: center;
+    margin-left: -10px;
+    margin-top: 0px;
+    padding-top: 128px;
+    font-size: 18px;
+    line-height: 22px;
+}
+.AFF-SpecialAnnouncements-History-Email{
+    background-image: url(../images/HistoryEmailRibbon.png);background-repeat: no-repeat;
+    background-position: center top;
+    width: 227px;
+    height: 31px;
+    z-index: 1;
+    position: relative;
+    margin-left: -9px;
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 7px;
+    line-height: 15px;
+    text-align: left;
+}
+.AFF-SpecialAnnouncements-History-Email a,
+.AFF-SpecialAnnouncements-History-Email a:link {
+    color: #e59908;
 }
 #AFF-MSRightStar01 {
     position: absolute;

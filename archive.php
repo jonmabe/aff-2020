@@ -23,6 +23,9 @@ $tent_background_number = 0;
 	?>
 	<div class="AFF-SidebarSmallBasicHeader"></div>
 	<?php
+		get_sidebar('history');
+	?>
+	<?php
 		get_sidebar('left-common');
 	?>
 </div>
@@ -31,7 +34,7 @@ $tent_background_number = 0;
 		get_sidebar('nav');
 	?>
 	<div class="AFF-SmallBasicHeader">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/HistoryHeader-New.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/HistoryHeader-New2.png" id="AFF-SmallBasicHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
 	</div>
 	<div class="AFF-HistoryBody">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/ContestMiddleStar.png" alt="Stars" id="AFF-HistoryMiddleStar">

@@ -90,7 +90,7 @@ $tent_background_number = 0;
 		get_sidebar('nav');
 	?>
 	<div class="AFF-ContestsHeader">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/ContestsHeader.png" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>" id="AFF-ContestsHeader">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/ContestsHeader2.png" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>" id="AFF-ContestsHeader">
 	</div>
 	<div class="AFF-ContestBody">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/ContestMiddleStar.png" alt="Stars" id="AFF-ContestMiddleStar">
@@ -126,7 +126,7 @@ $tent_background_number = 0;
 								}
 							?>
 							</ul>
-							<a href="<?= $entry_form['url'] ?>" target="_blank" class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EntryFormBtn.png" alt="Entry Form Button Yellow Text Black Background"></a>
+							<a href="<?= $entry_form['url'] ?>" target="_blank" class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EntryInfoBtn.png" alt="Entry Form Button Yellow Text Black Background"></a>
 						</div>
 					</div>
 				</div>

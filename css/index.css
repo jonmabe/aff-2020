@@ -564,7 +564,7 @@ h4 {
 }
 .AFF-EntryFormBtn01 {
     position: absolute;
-    top: 110px;
+    top: -6px;
     left: 450px;
     z-index: 1;
 }

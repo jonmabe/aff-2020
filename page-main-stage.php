@@ -61,10 +61,10 @@ $tent_background_number = 0;
 					$tent_background_number = 1;
 				else $tent_background_number++;
 			?>
-				<? if($col_count % 3 == 0) { ?>
+				<? if($col_count % 5 == 0) { ?>
 				<div class="row">
 				<?php } ?>
-					<div class="col-sm AFF-Tent AFF-Tent-<?echo $tent_background_number ?>">
+					<div class="col-sm AFF-Tent AFF-Tent-Small AFF-Tent-<?echo $tent_background_number ?>">
 						<?php if($performance_date > time()) : ?>
 						<div class="container AFF-MSTentContainer AFF-Tent-Upcoming">
 							<div class="row">
@@ -95,13 +95,13 @@ $tent_background_number = 0;
 							</div>
 							<div class="row">
 								<div class="col">
-									<h3>Click to Watch</h3>
+									<h3><a href="<?= $link ?>">Click to Watch</a></h3>
 								</div>
 							</div>
 						</div>
 						<?php endif; ?>
 					</div>
-				<? if(($col_count + 1) % 3 == 0) { ?>
+				<? if(($col_count + 1) % 5 == 0) { ?>
 				</div>
 				<?php } ?>
 			<?php
@@ -109,7 +109,7 @@ $tent_background_number = 0;
 			endwhile;
 			reset_rows();
 			?>
-			<? if(($col_count) % 3 != 0) { ?>
+			<? if(($col_count) % 5 != 0) { ?>
 				</div>
 			<?php } ?>
 			<?php endif; ?>

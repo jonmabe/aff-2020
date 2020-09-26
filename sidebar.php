@@ -15,12 +15,14 @@
 		</footer><!-- #colophon -->
 	</div>
 </div>
+
 <?php if(get_post_type() == "craft") : ?>
 <?php else : ?>
 <div class="col-md-auto" id="AFF-right-col">
 <div class="AFF-ParadeButton">
 	<a class="AFF-nav-link" href="<?= get_theme_mod('aff_parade_flyer') ?>" target="_blank">PARADE</a>
 </div>
+<?php if(!is_page('tonights-show')) : ?>
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/SupportArrow-text_S.png" alt="Text: With Generous Support From, Image: Yellow Down Arrow" id="AFF-SupportArrow">
 <?php
 	$post = get_page_by_path('thanks');
@@ -69,4 +71,5 @@ wp_reset_postdata();
 	?>
 </aside><!-- #secondary -->
 </div>
+<?php endif; ?>
 <?php endif; ?>

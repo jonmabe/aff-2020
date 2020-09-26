@@ -272,6 +272,10 @@ h3 {
     text-align: center;
     height: 256px;
 }
+.AFF-Tent-Small {
+    background-image: url(../images/SmallTent01.png);background-repeat: no-repeat;
+    height: 171px;
+}
 .AFF-Tent a,
 .AFF-Tent a:link,
 .AFF-Tent a:visited,
@@ -305,6 +309,24 @@ h3 {
 }
 .AFF-Tent-6 {
     background-image: url(../images/Tent06_S.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-1 {
+    background-image: url(../images/SmallTent01.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-2 {
+    background-image: url(../images/SmallTent02.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-3 {
+    background-image: url(../images/SmallTent03.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-4 {
+    background-image: url(../images/SmallTent04.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-5 {
+    background-image: url(../images/SmallTent05.png) !important;
+}
+.AFF-Tent-Small.AFF-Tent-6 {
+    background-image: url(../images/SmallTent06.png) !important;
 }
 .AFF-Tent-Image {
 }
@@ -350,6 +372,16 @@ h3 {
     color: #e3490b;
     text-align: center;
     font-size: 32px;
+}
+.AFF-Tent-Small .AFF-Tent-ImageContainer{
+    height: 86px;
+    width: 86px;
+    margin-top: 61px;
+    font-size: 22px;
+}
+.AFF-Tent-Small .col {
+    padding-left: 2.5px;
+    padding-right: 2.5px;
 }
 .AFF-Tent-Upcoming .AFF-Tent-ImageContainer,
 .AFF-Tent-Upcoming h3{
@@ -1267,4 +1299,14 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
 }
 .woocommerce form .form-row {
     display:block;
+}
+
+.AFF-Large-Player{
+    padding: 90px 0 0 94px;
+    width: 953px;
+    height: 648px;
+    background: url(../images/Frame-Large.png) top left;
+    position: relative;
+    margin-left: -188px;
+    z-index: 1;
 }

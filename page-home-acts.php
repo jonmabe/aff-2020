@@ -68,10 +68,13 @@ get_header();
 				<?php
 					$embed_code = get_sub_field('embed_code');
 					if($embed_code) {
-						echo $embed_code;
+						?>
+							<div class="AFF-FrameContent-Item-Wrapper"><?= $embed_code ?></div>
+							<div class="AFF-Enlarge-Button"><a href="<?= get_permalink(get_page_by_path( 'tonights-show' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EnlargeVideoBtn.png" /></a></div>
+						<?php
 					} else {
 						$image = get_sub_field('image');
-						?><a href="<?= get_sub_field('link') ?>" target="_blank"><?= wp_get_attachment_image($image['ID'], array(467, 285)) ?></a><?php
+						?><div class="AFF-FrameContent-Item-Wrapper"><a href="<?= get_sub_field('link') ?>" target="_blank"><?= wp_get_attachment_image($image['ID'], array(467, 285)) ?></a></div><?php
 					}
 				?>
 			</div>

@@ -159,6 +159,12 @@ h3 {
     display: block;
     height: 180px;
 }
+.AFF-SocialMedia{
+    position: relative;
+    display: block;
+    height: 128px;
+    padding: 32px 58px;
+}
 #AFF-DonateButton {
     width: 139px;
     height: 166px;
@@ -1019,7 +1025,6 @@ h4 {
     position: absolute;
     left: 77px;
     top: 54px;
-    z-index: 2;
 }
 
 .AFF-FrameContent-Item{
@@ -1030,12 +1035,16 @@ h4 {
     transition: opacity .33s ease-in-out;
     -moz-transition: opacity .33s ease-in-out;
     -webkit-transition: opacity .33s ease-in-out;
-    z-index: 0;
 }
 
 .AFF-FrameContent-Item-Active{
     opacity: 1;
-    z-index: 1;
+}
+.AFF-FrameContent-Item-Wrapper{
+    z-index: 0;
+}
+.AFF-FrameContent-Item-Active .AFF-FrameContent-Item-Wrapper{
+    z-index: 2;
 }
 
 /* CraftSub Page Specific */
@@ -1309,4 +1318,11 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
     position: relative;
     margin-left: -188px;
     z-index: 1;
+}
+
+.AFF-Enlarge-Button{
+    position: absolute;
+    top: 275px;
+    left: 5px;
+    z-index: 5;
 }

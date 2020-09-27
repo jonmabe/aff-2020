@@ -49,7 +49,11 @@ get_header();
 			}
 		</script>
 		<p><?= get_field('description') ?></p>
-
+		<?php if(get_field('website')) : ?>
+		<div class="AFF-ThanksFooter">
+			<h3><a href="<?php echo get_field('website') ?>" target="_blank"><?php echo get_field('website') ?></a></h3>
+		</div>
+		<?php endif; ?>
 		<div id="primary" class="site-main container AFF-MSTents AFF-ActPerformances">
 			<?php if(have_rows('performances')) : ?>
 			<h2>Performances</h2>

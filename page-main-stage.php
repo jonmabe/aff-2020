@@ -29,9 +29,18 @@ $tent_background_number = 0;
 	<?php
 		get_sidebar('home-link');
 	?>
-	<div class="AFF-MainStageBanner">
-		<div class="AFF-MSBanner-Content">
+	<div class="AFF-SidebarSmallBasicHeader"></div>
+	<div class="AFF-SpecialAnnouncements AFF-SpecialAnnouncements-MainStage">
+		<div class="AFF-SpecialAnnouncements-Content AFF-SpecialAnnouncements-MainStage-Content">
+			<div class="AFF-SpecialAnnouncements-MainStage-Header">Music! Fun!<br />Surprises!</div>
 			
+			Don’t miss <br />
+			out on our  <br />
+			“live” VARiety  <br />
+			shows airing  <br />
+			on this site  <br />
+			every friday in  <br />
+			october, 7pm!
 		</div>
 	</div>
 	<?php

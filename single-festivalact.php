@@ -24,7 +24,9 @@ get_header();
 		get_sidebar('nav');
 	?>
 	<div class="AFF-MainStageHeader">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MainStageHeaderAlt.png" id="AFF-MainStageHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
+		<a href="<?= get_permalink(get_page_by_path( 'main-stage' )) ?>" rel="prev">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MainStageHeaderAlt.png" id="AFF-MainStageHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
+		</a>
 	</div>
 	<div class="AFF-ActName">
 		<h1><?= the_title() ?></h1>

@@ -23,8 +23,6 @@
 		<a href="https://www.instagram.com/anaheimhalloweenparade/" target="_blank">
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/instagram.png" />
 		</a>
-	</div>
-	<div class="AFF-SocialMedia">
 		<a href="https://www.facebook.com/AnaheimHalloweenParade" target="_blank">
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/facebook.png" />
 		</a>

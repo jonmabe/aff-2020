@@ -163,7 +163,10 @@ h3 {
     position: relative;
     display: block;
     height: 128px;
-    padding: 32px 58px;
+    padding: 32px 0;
+}
+.AFF-SocialMedia img {
+    margin: 0 6px;
 }
 #AFF-DonateButton {
     width: 139px;

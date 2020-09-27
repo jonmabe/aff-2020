@@ -67,7 +67,7 @@ get_header();
 				<div class="row">
 				<?php } ?>
 					<div class="col-sm AFF-Tent AFF-Tent-<?echo $tent_background_number ?>">
-						<?php if($performance_date > time()) : ?>
+						<?php if($performance_date > time() && get_sub_field('youtube_id')) : ?>
 						<div class="container AFF-MSTentContainer AFF-Tent-Upcoming">
 							<div class="row">
 								<div class="col">

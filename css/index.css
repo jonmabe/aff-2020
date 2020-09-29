@@ -1342,6 +1342,7 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
     position: relative;
     margin-left: -188px;
     z-index: 1;
+    margin-bottom: 30px;
 }
 
 .AFF-Enlarge-Button{

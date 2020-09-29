@@ -35,7 +35,7 @@ get_header();
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/Frame.png" alt="Frame" id="AFF-Frame">
 		<div class="AFF-Act-FrameContent">
 			<?php if(get_field('playlist_youtube_id')) : ?>
-				<iframe width="503" height="307" src="https://www.youtube.com/embed/<?= get_field('playlist_youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="503" height="307" src="https://www.youtube.com/embed/videoseries?list=<?= get_field('playlist_youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<?php elseif(get_field('ad')) : ?>
 				<?php
 				$ad = get_field('ad');
@@ -73,7 +73,7 @@ get_header();
 				<div class="row">
 				<?php } ?>
 					<div class="col-sm AFF-Tent AFF-Tent-<?echo $tent_background_number ?>">
-						<?php if($performance_date > time() && get_sub_field('youtube_id')) : ?>
+						<?php if($performance_date > time() ||  !get_sub_field('youtube_id')) : ?>
 						<div class="container AFF-MSTentContainer AFF-Tent-Upcoming">
 							<div class="row">
 								<div class="col">

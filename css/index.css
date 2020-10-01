@@ -736,9 +736,11 @@ h4 {
 .AFF-ArtistsBody {
     width: 100%;
     position: relative;
+    padding-bottom: 50px;
 }
 .AFF-ArtistsTents {
     width: 570px;
+    margin-top: -35px;
 }
 .AFF-ArtTentContainer {
     margin: 0px !important;
@@ -969,13 +971,13 @@ h4 {
     background-image: url(../images/ContestBack01.png);
     background-repeat: no-repeat;
     background-position: center top;
-    height: 251px;
+    height: 265px;
 }
 .AFF-HistoryC02 {
     background-image: url(../images/ContestBack02.png);
     background-repeat: no-repeat;
     background-position: center top;
-    height: 263px;
+    height: 286px;
 }
 .AFF-HistoryTitle01 {
     font-family: Chickweed Tilting, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -986,6 +988,10 @@ h4 {
     font-size: 25px;
     padding-left: 188px;
     padding-top: 35px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .AFF-HistoryInfo01 {
     font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -1006,6 +1012,10 @@ h4 {
     font-size: 25px;
     padding-left: 50px;
     padding-top: 48px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .AFF-HistoryInfo02 {
     font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -1112,7 +1122,15 @@ h4 {
     position: absolute;
     top: 247px;
     left: 560px;
-    z-index: 1;
+}
+.AFF-SponsorCircle-Link{
+    width:177px;
+    height:177px;
+    position: absolute;
+    display:block;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
 }
 .AFF-CraftsSubBody {
     width: 100%;

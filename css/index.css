@@ -1237,6 +1237,8 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
 .woocommerce .AFF-GenericBodyContent ul.products li.product .price,
 .AFF-GenericBodyContent .woocommerce-Price-amount {
     color: #e3490b;
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
 }
 
 .woocommerce .AFF-GenericBodyContent #respond input#submit, 
@@ -1258,6 +1260,7 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
 {
     background-color: #e3490b;
     color: #e59908;
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .woocommerce .AFF-GenericBodyContent #respond input#submit, 
@@ -1332,6 +1335,82 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
 }
 .woocommerce form .form-row {
     display:block;
+}
+.woocommerce div.product form.cart .variations label {
+    font-weight: 700;
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 22px;
+}
+.woocommerce div.product form.cart .variations select {
+    background-color: #e5c588;
+    height: 30px;
+    border-radius: 5px;
+}
+.woocommerce div.product form.cart .reset_variations {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.woocommerce .quantity .qty {
+    height: 36px;
+    border-radius: 5px;
+    background-color: #e5c588;
+}
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+    background-color: #e5c588 !important;
+}
+.woocommerce-error a, .woocommerce-info a, .woocommerce-message a {
+    color: #000000;
+}
+.woocommerce-error a:hover, .woocommerce-info a:hover, .woocommerce-message a:hover {
+    color: #e3490b;
+}
+.woocommerce-message {
+    border-top-color: green !important;
+}
+.woocommerce-info {
+    border-top-color: #2b636b !important;
+}
+.woocommerce-message::before {
+    color: green !important;
+}
+table.shop_table_responsive tr td.product-remove a {
+    text-align: center !important;
+}
+.shop_table a, .shop_table_responsive a {
+    color: #000000;
+}
+.shop_table a:hover, .shop_table_responsive a:hover {
+    color: #e3490b;
+}
+.shop_table th, .shop_table_responsive th {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+.woocommerce form .form-row label {
+    font-family: Komika Title, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    border-radius: 5px;
+    background-color: #e5c588;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    border-radius: 5px;
+    background-color: #e5c588;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+    background-color: #e3490b !important;
+    text-decoration: none;
+    background-image: none;
+    color: #000000 !important;
+}
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background: #e5c588 !important;
+    border-radius: 5px;
+}
+#add_payment_method #payment a, .woocommerce-cart #payment a, .woocommerce-checkout #payment a {
+    color: #000000 !important;
+}
+#add_payment_method #payment a:hover, .woocommerce-cart #payment a:hover, .woocommerce-checkout #payment a:hover {
+    color: #e3490b !important;
 }
 
 .AFF-Large-Player{

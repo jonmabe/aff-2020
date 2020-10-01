@@ -46,6 +46,7 @@ get_header();
 			}
 			?>
 			</a>
+			<a class="AFF-SponsorCircle-Link" href="<?= the_field('sponsor_link') ?>" target="_blank"></a>
 		</div>
 	</div>
 	<div class="AFF-CraftsSubBody">

@@ -108,6 +108,7 @@ get_header();
 			foreach($menu_items as $menu_item) :
 				$image = get_field('tent_image', $menu_item->ID);
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
 				else $tent_background_number++;

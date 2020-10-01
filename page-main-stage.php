@@ -59,13 +59,14 @@ $tent_background_number = 0;
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSLeftStars.png" alt="Stars" id="AFF-MSLeftStars">
 		<div id="primary" class="site-main container AFF-MSTents">
 			<?php if(have_rows('performances')) : ?>
-			<h2>Performances</h2>
+			<h2 style="margin-top: -35px;">Performances</h2>
 			<p>Rewatch past performances by clicking below!</p>
 			<?php 
 			while( have_rows('performances') ) : the_row(); 
 				$link = "javascript: displayPerformance('". get_sub_field('youtube_id') ."');";
 				$performance_date = strtotime(get_sub_field('date'));
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
 				else $tent_background_number++;
@@ -167,29 +168,6 @@ $tent_background_number = 0;
 				</div>
 			<?php } ?>
 			<?php wp_reset_postdata(); ?>
-			<?php if(have_rows('performances')) : ?>
-			<div class="AFF-Past-Performances">
-				<h2>Performances</h2>
-				<p>Rewatch past performances by clicking below!</p>
-				<?php 
-					while( have_rows('performances') ) : the_row(); 
-						$performance_date = strtotime(get_sub_field('date'));
-						if($performance_date <= time()){
-							?>
-							<div class="AFF-MainStage-Performace">
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/Frame.png" alt="Frame" id="AFF-Frame">
-								<div class="AFF-Act-FrameContent">
-									<?php if(get_sub_field('youtube_id')) : ?>
-										<iframe width="503" height="307" src="https://www.youtube.com/embed/<?= get_sub_field('youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<?php endif; ?>
-								</div>
-							</div>
-							<?php
-						}
-					endwhile;
-				?>
-			</div>
-			<?php endif; ?>
 		</div>
 
 <?php

@@ -44,16 +44,17 @@
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/ThanksArrow-text_S.png" alt="Text: Big Thanks, Image: Yellow Down Arrow" id="AFF-ThanksArrow">
 <div class="AFF-Thanks">
 	<?php if(is_archive() || is_single()) : ?>
-		<div class="AFF-Sponsor AFF-Sponsor-Small">
-			<a href="http://www.anaheimhistoricalsociety.com/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimHistoricalSocietyLogo.png" ?" /></a>
-		</div>
+		<ul>
+			<li class="AFF-Thanks-Name">Anaheim Historical Society</li>
+		</ul>
 	<?php elseif(is_page('crafts')) : ?>
 		<?php
 		$args = array(  
 			'post_type' => 'craft',
 			'post_status' => 'publish',
 			'posts_per_page' => 100, 
-			'orderby' => 'title', 
+			'meta_key' => 'sponsor_name',
+			'orderby' => 'meta_value', 
 			'order' => 'ASC', 
 		);
 		$loop = new WP_Query( $args ); 

@@ -47,6 +47,25 @@
 		<div class="AFF-Sponsor AFF-Sponsor-Small">
 			<a href="http://www.anaheimhistoricalsociety.com/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimHistoricalSocietyLogo.png" ?" /></a>
 		</div>
+	<?php elseif(is_page('crafts')) : ?>
+		<?php
+		$args = array(  
+			'post_type' => 'craft',
+			'post_status' => 'publish',
+			'posts_per_page' => 100, 
+			'orderby' => 'title', 
+			'order' => 'ASC', 
+		);
+		$loop = new WP_Query( $args ); 
+		?>
+		<ul>
+			<?php
+			while ( $loop->have_posts() ) : $loop->the_post(); 
+				?><li class="AFF-Thanks-Name"><?= get_field('sponsor_name') ?></li><?
+			endwhile;
+			wp_reset_postdata(); 
+			?>
+		</ul>
 	<?php else : ?>
 		<?php
 		$special_thanks_text = get_field('special_thanks', false, false);
@@ -57,7 +76,7 @@
 			foreach($special_thanks as $name){
 				?><li class="AFF-Thanks-Name"><?= $name ?></li><?
 			}
-		?>
+			?>
 		<?php endif; ?>
 		</ul>
 		<?php endif; ?>

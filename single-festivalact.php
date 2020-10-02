@@ -34,7 +34,7 @@ get_header();
 	<div class="AFF-MainStageBody">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/Frame.png" alt="Frame" id="AFF-Frame">
 		<div class="AFF-Act-FrameContent">
-			<?php if(get_field('playlist_youtube_id')) : ?>
+			<?php if(false && get_field('playlist_youtube_id')) : ?>
 				<iframe width="503" height="307" src="https://www.youtube.com/embed/videoseries?list=<?= get_field('playlist_youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<?php elseif(get_field('ad')) : ?>
 				<?php

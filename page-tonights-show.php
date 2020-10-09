@@ -29,7 +29,7 @@ get_header();
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MainStageHeader.png" id="AFF-MainStageHeader" alt="<?php bloginfo( 'name' ); ?>; <?= get_bloginfo( 'description', 'display' ) ?>">
 	</div>
 	<div class="AFF-GenericBodyContent">
-		<div class="AFF-Large-Player">
+		<div class="AFF-Large-Player" id="player">
 			<?= get_field('embed_player') ?>
 		</div>
 		<?php

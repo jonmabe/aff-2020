@@ -368,6 +368,9 @@ h3 {
     top: 78px;
 }
 
+#AFF-Main-Stage-Frame{
+    margin-left:-15px;
+}
 
 .AFF-Tent-ImageContainer{
     margin: 100px auto 0;
@@ -1069,6 +1072,7 @@ h4 {
     transition: opacity .33s ease-in-out;
     -moz-transition: opacity .33s ease-in-out;
     -webkit-transition: opacity .33s ease-in-out;
+    z-index: 0;
 }
 
 .AFF-FrameContent-Item-Active{

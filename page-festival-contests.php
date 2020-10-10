@@ -41,9 +41,8 @@ $tent_background_number = 0;
 					<div class="col">
 						<p>
 							REVIEW RULES & <br>
-							PRINT ENTRY INFO <br>
-							FOR CONTEST <br>
-							OF CHOICE
+							ENTRY INFO FOR <br>
+							CONTEST OF CHOICE
 						</p>
 					</div>
 				</div>
@@ -55,10 +54,9 @@ $tent_background_number = 0;
 				<div class="row">
 					<div class="col">
 						<p>
-							FILL OUT INFO & <br>
 							BE SURE TO INCLUDE <br>
 							PHOTO IF APPLICABLE <br>
-							TO CONTEST
+							TO THE CONTEST
 						</p>
 					</div>
 				</div>
@@ -70,11 +68,11 @@ $tent_background_number = 0;
 				<div class="row">
 					<div class="col">
 						<p>
-							EMAIL INFO TO <br>
-							ADDRESS PROVIDED <br>
+							EMAIL THE INFO <br>
+							REQUESTED TO ENTRY <br>
 							NOTE: EACH CONTEST <br>
-							MAY HAVE IT’S OWN <br>
-							UNIQUE ADDRESS
+							HAS IT’S OWN UNIQUE <br>
+							EMAIL ADDRESS
 						</p>
 					</div>
 				</div>

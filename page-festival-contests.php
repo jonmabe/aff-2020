@@ -125,7 +125,7 @@ $tent_background_number = 0;
 								}
 							?>
 							</ul>
-							<?php if(get_field('closed') && get_field('closed')[0] == 'Closed') : ?>
+							<?php if(get_field('closed')[0] == 'Closed' || get_field('Closed')[0] == 'Closed') : ?>
 							<div class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/NowClosedBtn.png" alt="Entry Form Button Yellow Text Black Background"></div>
 							<?php else : ?>
 							<a href="<?= $entry_form['url'] ?>" target="_blank" class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EntryInfoBtn.png" alt="Entry Form Button Yellow Text Black Background" /></a>

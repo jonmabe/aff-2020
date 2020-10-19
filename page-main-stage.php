@@ -63,7 +63,7 @@ $tent_background_number = 0;
 			$dayofweek = date('w', $date);
 			$hour = date('G', $date);
 			
-			if(false && $dayofweek == 5 && ($hour >= 18 || $hour <= 20)) :
+			if($dayofweek == 5 && ($hour >= 18 || $hour <= 20)) :
 				$post = get_page_by_path('tonights-show');
 				?>
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FrameHP.png" id="AFF-Main-Stage-Frame" />
@@ -79,7 +79,7 @@ $tent_background_number = 0;
 			?>
 
 			<?php if(have_rows('performances')) : ?>
-			<h2 style="margin-top: -35px;">Performances</h2>
+			<h2 style="margin-top: 0; -35px;">Performances</h2>
 			<p>Rewatch past performances by clicking below!</p>
 			<?php 
 			while( have_rows('performances') ) : the_row(); 

@@ -34,8 +34,8 @@ get_header();
 	<div class="AFF-MainStageBody">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/Frame.png" alt="Frame" id="AFF-Frame">
 		<div class="AFF-Act-FrameContent">
-			<?php if(get_field('playlist_youtube_id')) : ?>
-				<iframe width="503" height="307" src="https://www.youtube.com/embed/<?= get_field('playlist_youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<?php if(false && get_field('playlist_youtube_id')) : ?>
+				<iframe width="503" height="307" src="https://www.youtube.com/embed/videoseries?list=<?= get_field('playlist_youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<?php elseif(get_field('ad')) : ?>
 				<?php
 				$ad = get_field('ad');
@@ -47,7 +47,9 @@ get_header();
 		</div>
 		<script>
 			function displayPerformance(youtubeID) {
-				jQuery('.AFF-Act-FrameContent').html('<iframe width="503" height="307" src="https://www.youtube.com/embed/'+ youtubeID +'?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+				jQuery('.AFF-Act-FrameContent')
+					.html('<iframe width="503" height="307" src="https://www.youtube.com/embed/'+ youtubeID +'?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+				window.scrollTo(0, 340);
 			}
 		</script>
 		<p><?= get_field('description') ?></p>
@@ -64,7 +66,9 @@ get_header();
 			while( have_rows('performances') ) : the_row(); 
 				$link = "javascript: displayPerformance('". get_sub_field('youtube_id') ."');";
 				$performance_date = strtotime(get_sub_field('date'));
+				$now = time() - (60*60*7);
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
 				else $tent_background_number++;
@@ -73,7 +77,7 @@ get_header();
 				<div class="row">
 				<?php } ?>
 					<div class="col-sm AFF-Tent AFF-Tent-<?echo $tent_background_number ?>">
-						<?php if($performance_date > time() && get_sub_field('youtube_id')) : ?>
+						<?php if($performance_date > $now ||  !get_sub_field('youtube_id')) : ?>
 						<div class="container AFF-MSTentContainer AFF-Tent-Upcoming">
 							<div class="row">
 								<div class="col">

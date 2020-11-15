@@ -44,6 +44,7 @@ $tent_background_number = 0;
 				//$image = get_field('thumbnail_image');
 
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 2)
 					$tent_background_number = 1;
 				else $tent_background_number++;

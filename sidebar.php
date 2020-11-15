@@ -44,9 +44,29 @@
 <img src="<?php bloginfo('stylesheet_directory'); ?>/images/ThanksArrow-text_S.png" alt="Text: Big Thanks, Image: Yellow Down Arrow" id="AFF-ThanksArrow">
 <div class="AFF-Thanks">
 	<?php if(is_archive() || is_single()) : ?>
-		<div class="AFF-Sponsor AFF-Sponsor-Small">
-			<a href="http://www.anaheimhistoricalsociety.com/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/AnaheimHistoricalSocietyLogo.png" ?" /></a>
-		</div>
+		<ul>
+			<li class="AFF-Thanks-Name">Anaheim Historical Society</li>
+		</ul>
+	<?php elseif(is_page('crafts')) : ?>
+		<?php
+		$args = array(  
+			'post_type' => 'craft',
+			'post_status' => 'publish',
+			'posts_per_page' => 100, 
+			'meta_key' => 'sponsor_name',
+			'orderby' => 'meta_value', 
+			'order' => 'ASC', 
+		);
+		$loop = new WP_Query( $args ); 
+		?>
+		<ul>
+			<?php
+			while ( $loop->have_posts() ) : $loop->the_post(); 
+				?><li class="AFF-Thanks-Name"><?= get_field('sponsor_name') ?></li><?
+			endwhile;
+			wp_reset_postdata(); 
+			?>
+		</ul>
 	<?php else : ?>
 		<?php
 		$special_thanks_text = get_field('special_thanks', false, false);
@@ -57,7 +77,7 @@
 			foreach($special_thanks as $name){
 				?><li class="AFF-Thanks-Name"><?= $name ?></li><?
 			}
-		?>
+			?>
 		<?php endif; ?>
 		</ul>
 		<?php endif; ?>

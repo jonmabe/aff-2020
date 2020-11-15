@@ -58,14 +58,36 @@ $tent_background_number = 0;
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSRightStar01.png" alt="Stars" id="AFF-MSRightStar01">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/MSLeftStars.png" alt="Stars" id="AFF-MSLeftStars">
 		<div id="primary" class="site-main container AFF-MSTents">
+			<?php
+			$date = time()  - (60*60*7);
+			$dayofweek = date('w', $date);
+			$hour = date('G', $date);
+			
+			if($dayofweek == 5 && ($hour >= 18 || $hour <= 20)) :
+				$post = get_page_by_path('tonights-show');
+				?>
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/FrameHP.png" id="AFF-Main-Stage-Frame" />
+				<div id="AFF-FrameContent">
+					<div class="AFF-FrameContent-Item AFF-FrameContent-Item-Active">
+						<div class="AFF-FrameContent-Item-Wrapper"><iframe src="https://player.twitch.tv/?channel=anaheimfallfestival&amp;parent=www.anaheimfallfestival.org" frameborder="0" allowfullscreen="true" scrolling="no" height="285" width="467"></iframe></div>
+						<div class="AFF-Enlarge-Button"><a href="<?= get_permalink(get_page_by_path( 'tonights-show' )) ?>#player"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EnlargeVideoButton.png" /></a></div>
+					</div>
+				</div>
+				<?php
+				wp_reset_postdata();
+			endif;
+			?>
+
 			<?php if(have_rows('performances')) : ?>
-			<h2>Performances</h2>
+			<h2 style="margin-top: 0; -35px;">Performances</h2>
 			<p>Rewatch past performances by clicking below!</p>
 			<?php 
 			while( have_rows('performances') ) : the_row(); 
-				$link = "javascript: displayPerformance('". get_sub_field('youtube_id') ."');";
+				$link = "https://youtu.be/". get_sub_field('youtube_id');
 				$performance_date = strtotime(get_sub_field('date'));
+				$now = time() - (60*60*7);
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
 				else $tent_background_number++;
@@ -74,7 +96,7 @@ $tent_background_number = 0;
 				<div class="row">
 				<?php } ?>
 					<div class="col-sm AFF-Tent AFF-Tent-Small AFF-Tent-<?echo $tent_background_number ?>">
-						<?php if($performance_date > time() && get_sub_field('youtube_id')) : ?>
+						<?php if($performance_date > $now || !get_sub_field('youtube_id')) : ?>
 						<div class="container AFF-MSTentContainer AFF-Tent-Upcoming">
 							<div class="row">
 								<div class="col">
@@ -104,7 +126,7 @@ $tent_background_number = 0;
 							</div>
 							<div class="row">
 								<div class="col">
-									<h3><a href="<?= $link ?>">Click to Watch</a></h3>
+									<h3><a href="<?= $link ?>" target="_blank">Click to Watch</a></h3>
 								</div>
 							</div>
 						</div>
@@ -167,29 +189,6 @@ $tent_background_number = 0;
 				</div>
 			<?php } ?>
 			<?php wp_reset_postdata(); ?>
-			<?php if(have_rows('performances')) : ?>
-			<div class="AFF-Past-Performances">
-				<h2>Performances</h2>
-				<p>Rewatch past performances by clicking below!</p>
-				<?php 
-					while( have_rows('performances') ) : the_row(); 
-						$performance_date = strtotime(get_sub_field('date'));
-						if($performance_date <= time()){
-							?>
-							<div class="AFF-MainStage-Performace">
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/Frame.png" alt="Frame" id="AFF-Frame">
-								<div class="AFF-Act-FrameContent">
-									<?php if(get_sub_field('youtube_id')) : ?>
-										<iframe width="503" height="307" src="https://www.youtube.com/embed/<?= get_sub_field('youtube_id') ?>?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<?php endif; ?>
-								</div>
-							</div>
-							<?php
-						}
-					endwhile;
-				?>
-			</div>
-			<?php endif; ?>
 		</div>
 
 <?php

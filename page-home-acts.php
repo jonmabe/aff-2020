@@ -70,7 +70,7 @@ get_header();
 					if($embed_code) {
 						?>
 							<div class="AFF-FrameContent-Item-Wrapper"><?= $embed_code ?></div>
-							<div class="AFF-Enlarge-Button"><a href="<?= get_permalink(get_page_by_path( 'tonights-show' )) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EnlargeVideoButton.png" /></a></div>
+							<div class="AFF-Enlarge-Button"><a href="<?= get_permalink(get_page_by_path( 'tonights-show' )) ?>#player"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EnlargeVideoButton.png" /></a></div>
 						<?php
 					} else {
 						$image = get_sub_field('image');
@@ -108,6 +108,7 @@ get_header();
 			foreach($menu_items as $menu_item) :
 				$image = get_field('tent_image', $menu_item->ID);
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 6)
 					$tent_background_number = 1;
 				else $tent_background_number++;

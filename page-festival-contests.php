@@ -41,9 +41,8 @@ $tent_background_number = 0;
 					<div class="col">
 						<p>
 							REVIEW RULES & <br>
-							PRINT ENTRY FORM <br>
-							FOR CONTEST <br>
-							OF CHOICE
+							ENTRY INFO FOR <br>
+							CONTEST OF CHOICE
 						</p>
 					</div>
 				</div>
@@ -55,10 +54,9 @@ $tent_background_number = 0;
 				<div class="row">
 					<div class="col">
 						<p>
-							FILL OUT FORM & <br>
 							BE SURE TO INCLUDE <br>
 							PHOTO IF APPLICABLE <br>
-							TO CONTEST
+							TO THE CONTEST
 						</p>
 					</div>
 				</div>
@@ -70,11 +68,11 @@ $tent_background_number = 0;
 				<div class="row">
 					<div class="col">
 						<p>
-							EMAIL FORM TO <br>
-							ADDRESS PROVIDED <br>
+							EMAIL THE INFO <br>
+							REQUESTED TO ENTRY <br>
 							NOTE: EACH CONTEST <br>
-							MAY HAVE IT’S OWN <br>
-							UNIQUE ADDRESS
+							HAS IT’S OWN UNIQUE <br>
+							EMAIL ADDRESS
 						</p>
 					</div>
 				</div>
@@ -100,6 +98,7 @@ $tent_background_number = 0;
 				$image = get_field('thumbnail_image');
 				$entry_form = get_field('entry_form');
 				$rotate_image_degrees = rand(-2,2);
+				if($rotate_image_degrees == 0) $rotate_image_degrees = -1;
 				if($tent_background_number == 2)
 					$tent_background_number = 1;
 				else $tent_background_number++;
@@ -126,7 +125,11 @@ $tent_background_number = 0;
 								}
 							?>
 							</ul>
-							<a href="<?= $entry_form['url'] ?>" target="_blank" class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EntryInfoBtn.png" alt="Entry Form Button Yellow Text Black Background"></a>
+							<?php if(get_field('closed')[0] == 'Closed' || get_field('Closed')[0] == 'Closed') : ?>
+							<div class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/NowClosedBtn.png" alt="Entry Form Button Yellow Text Black Background"></div>
+							<?php else : ?>
+							<a href="<?= $entry_form['url'] ?>" target="_blank" class="AFF-EntryFormBtn0<?= $tent_background_number ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/EntryInfoBtn.png" alt="Entry Form Button Yellow Text Black Background" /></a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

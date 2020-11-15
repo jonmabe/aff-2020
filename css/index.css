@@ -19,6 +19,11 @@
     src: url("../fonts/komtit__-webfont.woff2") format("woff2"),
     url("../fonts/komtit__-webfont.woff") format("woff");
 }
+@font-face {
+    font-family: "Superclarendon Bold";
+    src: url("../fonts/superclarendon_bold-webfont.woff2") format("woff2"),
+    url("../fonts/superclarendon_bold-webfont.woff") format("woff");
+}
 body {
     background-color: #000000;
 }
@@ -197,6 +202,11 @@ h3 {
 #AFF-mid-col {
     background-color: #e59908;
     width: 640px;
+}
+#AFF-single-col{
+    background-color: #e59908;
+    width: 1237px;
+    padding: 0 82px;
 }
 .AFF-Nav {
     width: 100%;
@@ -1344,9 +1354,59 @@ ul.products.columns-4 li.product:nth-of-type( 4n ) {
     z-index: 1;
 }
 
+#AFF-single-col .AFF-Large-Player{
+    margin: -92px auto 0;
+}
+
+.AFF-Small-Player{
+    width: 573px;
+    height: 390px;
+    background: url(../images/FrameHP.png) top left;
+    position: relative;
+}
+
 .AFF-Enlarge-Button{
     position: absolute;
     top: 275px;
     left: 5px;
     z-index: 5;
+}
+
+.AFF-thanks-area{
+    background: url(../images/thanks-area.png) top left;
+    width: 1088px;
+    height: 1104px;
+    margin-left: -55px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.AFF-container-Until-Next-Year{
+    width: 1237px !important;
+}
+
+.AFF-container-Until-Next-Year .AFF-SupportFooter{
+    position: unset;
+}
+.Thanks-Main{
+    background: url(../images/thanks-logos.png) top left;
+    width: 874px;
+    height: 362px;
+    margin: 0 auto 0;
+}
+.Thanks-Secondary,
+.Thanks-Volunteers{
+    font-family: Superclarendon Bold, serif;
+    font-size: 14px;
+    text-align: center;
+    word-spacing: 5px;
+}
+.Thanks-Secondary{
+    margin-bottom: 40px;
+}
+.Thanks-Volunteers{
+    color: #e3490b;
+}
+.Thanks-See-Ya{
+    margin-top: 10px;
 }

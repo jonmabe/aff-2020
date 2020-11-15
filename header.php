@@ -22,5 +22,9 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php if(is_page('until-next-year')) : ?>
+<div class="container AFF-container AFF-container-Until-Next-Year">
+<?php else : ?>
 <div class="container AFF-container">
+<?php endif; ?>
 	<div id="page" class="row site">

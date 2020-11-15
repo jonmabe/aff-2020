@@ -16,7 +16,7 @@
 	</div>
 </div>
 
-<?php if(get_post_type() == "craft") : ?>
+<?php if(get_post_type() == "craft" || is_page('until-next-year')) : ?>
 <?php else : ?>
 <div class="col-md-auto" id="AFF-right-col">
 <div class="AFF-ParadeButton">
